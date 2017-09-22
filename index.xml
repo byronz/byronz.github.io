@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | Byron ZHU</copyright>
-    <lastBuildDate>Thu, 21 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Sep 2017 16:10:27 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My blog site setup tips</title>
+      <link>https://byronz.github.io/posts/notes_hugo/</link>
+      <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/notes_hugo/</guid>
+      <description>The first mistake you might have about Github Pages is about the difference between User &amp;amp; Org Pages and Project Page. It takes me a while to realize that the first page can only point to the static content in master branch, which you don&amp;rsquo;t have the possiblity of switching to gh-page branch or master/doc (you can do that with project repo though)
+Select a good theme for blogging, I tried After Dark, Hugo Nuo, Future Imperfect, Cactus,</description>
+    </item>
     
     <item>
       <title>(Hu)go Template Primer</title>
