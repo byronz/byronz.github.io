@@ -6,7 +6,7 @@
     <description>Recent content in Posts on igni 🇨🇳 🇨🇦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 | Byron ZHU</copyright>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 21 Sep 2017 16:10:27 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +18,7 @@
       <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
       
       <guid>https://byronz.github.io/posts/notes_hugo/</guid>
-      <description>The first mistake you might have about Github Pages is about the difference between User &amp;amp; Org Pages and Project Page. It takes me a while to realize that the first page can only point to the static content in master branch, which you don&amp;rsquo;t have the possiblity of switching to gh-page branch or master/doc (you can do that with project repo though)
-Select a good theme for blogging, I tried After Dark, Hugo Nuo, Future Imperfect, Cactus,</description>
+      <description>The first mistake you might have about Github Pages is about the subtle difference between User &amp;amp; Org Pages and Project Page. It takes me a while to realize that the first page can only point to the static content in master branch, which you don&amp;rsquo;t have the possiblity of switching to gh-page branch or master/doc (you can do that with project repo though). So you only publish your generated static content in User Page as git submodule.</description>
     </item>
     
     <item>

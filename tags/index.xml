@@ -6,20 +6,11 @@
     <description>Recent content in Tags on igni 🇨🇳 🇨🇦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 | Byron ZHU</copyright>
-    <lastBuildDate>Thu, 21 Sep 2017 16:10:27 -0400</lastBuildDate>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 21 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Blog</title>
-      <link>https://byronz.github.io/tags/blog/</link>
-      <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
-      
-      <guid>https://byronz.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Development</title>
@@ -72,6 +63,15 @@
       <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tech</title>
+      <link>https://byronz.github.io/tags/tech/</link>
+      <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/tech/</guid>
       <description></description>
     </item>
     
