@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 21 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Sep 2017 16:10:27 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Development</title>
-      <link>https://byronz.github.io/tags/development/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://byronz.github.io/tags/development/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Github</title>
@@ -27,24 +18,6 @@
       <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://byronz.github.io/tags/go/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://byronz.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://byronz.github.io/tags/golang/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://byronz.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -72,24 +45,6 @@
       <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Templates</title>
-      <link>https://byronz.github.io/tags/templates/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://byronz.github.io/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>https://byronz.github.io/tags/themes/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://byronz.github.io/tags/themes/</guid>
       <description></description>
     </item>
     
