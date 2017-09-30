@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 21 Sep 2017 16:10:27 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 28 Sep 2017 13:47:27 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Astronomy</title>
+      <link>https://byronz.github.io/tags/astronomy/</link>
+      <pubDate>Thu, 28 Sep 2017 13:47:27 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/astronomy/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Github</title>
@@ -40,11 +49,47 @@
     </item>
     
     <item>
+      <title>Narcos</title>
+      <link>https://byronz.github.io/tags/narcos/</link>
+      <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/narcos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tech</title>
       <link>https://byronz.github.io/tags/tech/</link>
       <pubDate>Thu, 21 Sep 2017 16:10:27 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Telescope</title>
+      <link>https://byronz.github.io/tags/telescope/</link>
+      <pubDate>Thu, 28 Sep 2017 13:47:27 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/telescope/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>朝花夕拾</title>
+      <link>https://byronz.github.io/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/</link>
+      <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>语言</title>
+      <link>https://byronz.github.io/tags/%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     
