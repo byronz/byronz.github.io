@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://byronz.github.io/posts/jwt/</loc>
+    <lastmod>2017-10-02T10:53:53-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/posts/eng-1/</loc>
     <lastmod>2017-09-28T17:15:20-04:00</lastmod>
   </url>
@@ -64,6 +69,12 @@
   </url>
   
   <url>
+    <loc>https://byronz.github.io/tags/jwt/</loc>
+    <lastmod>2017-10-02T10:53:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/tags/narcos/</loc>
     <lastmod>2017-09-28T17:15:20-04:00</lastmod>
     <priority>0</priority>
@@ -76,8 +87,26 @@
   </url>
   
   <url>
+    <loc>https://byronz.github.io/tags/python/</loc>
+    <lastmod>2017-10-02T10:53:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/rfc7519/</loc>
+    <lastmod>2017-10-02T10:53:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/tags/scrum/</loc>
     <lastmod>2017-10-02T13:17:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/security/</loc>
+    <lastmod>2017-10-02T10:53:53-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -96,6 +125,12 @@
   <url>
     <loc>https://byronz.github.io/tags/telescope/</loc>
     <lastmod>2017-09-28T13:47:27-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/web/</loc>
+    <lastmod>2017-10-02T10:53:53-04:00</lastmod>
     <priority>0</priority>
   </url>
   

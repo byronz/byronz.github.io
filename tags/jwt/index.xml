@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jwt on </title>
+    <link>https://byronz.github.io/tags/jwt/</link>
+    <description>Recent content in Jwt on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 02 Oct 2017 10:53:53 -0400</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/jwt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JWT</title>
+      <link>https://byronz.github.io/posts/jwt/</link>
+      <pubDate>Mon, 02 Oct 2017 10:53:53 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/jwt/</guid>
+      <description>Structure  JJJJ.PPPPPPP.SSSSSSSS
+  JOSE Payload Signature  RFCs  JWS JWT  Usage Validation Algorithm  7.2. Validating a JWT
+When validating a JWT, the following steps are performed. The order of the steps is not significant in cases where there are no dependencies between the inputs and outputs of the steps. If any of the listed steps fail, then the JWT MUST be rejected &amp;ndash; that is, treated by the application as an invalid input.</description>
+    </item>
+    
+  </channel>
+</rss>

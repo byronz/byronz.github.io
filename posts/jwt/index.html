@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="JWT - ">
+<meta property="og:url" content="https://byronz.github.io/posts/jwt/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>JWT | </title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4"></h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">JWT</h1>
+    <h2 class="subtitle is-5">October 2, 2017 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/jwt">jwt</a>
+    
+        <a class="button is-link" href="/tags/rfc7519">rfc7519</a>
+    
+        <a class="button is-link" href="/tags/security">security</a>
+    
+        <a class="button is-link" href="/tags/python">python</a>
+    
+        <a class="button is-link" href="/tags/web">web</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<h2 id="structure">Structure</h2>
+
+<blockquote>
+<p>JJJJ.PPPPPPP.SSSSSSSS</p>
+</blockquote>
+
+<ul>
+<li>JOSE</li>
+<li>Payload</li>
+<li>Signature</li>
+</ul>
+
+<h2 id="rfcs">RFCs</h2>
+
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc7515">JWS</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7519">JWT</a></li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p><img src="/img/jwt-token.jpeg" alt="jwt process" /></p>
+
+<h2 id="validation-algorithm">Validation Algorithm</h2>
+
+<blockquote>
+<p>7.2.  Validating a JWT</p>
+
+<p>When validating a JWT, the following steps are performed.  The order
+  of the steps is not significant in cases where there are no
+  dependencies between the inputs and outputs of the steps.  If any of
+  the listed steps fail, then the JWT MUST be rejected &ndash; that is,
+  treated by the application as an invalid input.</p>
+
+<ol>
+<li><p>Verify that the JWT contains at least one period (&lsquo;.&rsquo;)
+   character.</p></li>
+
+<li><p>Let the Encoded JOSE Header be the portion of the JWT before the
+   first period (&lsquo;.&rsquo;) character.</p></li>
+
+<li><p>Base64url decode the Encoded JOSE Header following the
+   restriction that no line breaks, whitespace, or other additional
+   characters have been used.</p></li>
+
+<li><p>Verify that the resulting octet sequence is a UTF-8-encoded
+   representation of a completely valid JSON object conforming to
+   RFC 7159 [RFC7159]; let the JOSE Header be this JSON object.</p></li>
+
+<li><p>Verify that the resulting JOSE Header includes only parameters
+   and values whose syntax and semantics are both understood and
+   supported or that are specified as being ignored when not
+   understood.</p></li>
+
+<li><p>Determine whether the JWT is a JWS or a JWE using any of the
+   methods described in Section 9 of [JWE].</p></li>
+
+<li><p>Depending upon whether the JWT is a JWS or JWE, there are two
+    cases:</p>
+
+<ul>
+<li><p>If the JWT is a JWS, follow the steps specified in [JWS] for
+   validating a JWS.  Let the Message be the result of base64url
+   decoding the JWS Payload.</p></li>
+
+<li><p>Else, if the JWT is a JWE, follow the steps specified in
+   [JWE] for validating a JWE.  Let the Message be the resulting
+   plaintext.</p></li>
+</ul></li>
+
+<li><p>If the JOSE Header contains a &ldquo;cty&rdquo; (content type) value of
+    &ldquo;JWT&rdquo;, then the Message is a JWT that was the subject of nested
+    signing or encryption operations.  In this case, return to Step
+    1, using the Message as the JWT.</p></li>
+
+<li><p>Otherwise, base64url decode the Message following the
+    restriction that no line breaks, whitespace, or other additional
+    characters have been used.</p></li>
+
+<li><p>Verify that the resulting octet sequence is a UTF-8-encoded
+    representation of a completely valid JSON object conforming to
+    RFC 7159 [RFC7159]; let the JWT Claims Set be this JSON object.</p></li>
+</ol>
+</blockquote>
+
+<h2 id="python-implementations">Python Implementations</h2>
+
+<p><img src="/img/jwt-python.png" alt="python libraries" /></p>
+
+<p><a href="https://jwt.io/">jwt.io</a> has a big list of major open source implementations by programming language</p>
+
+<p>Python community has three:</p>
+
+<ul>
+<li><a href="https://github.com/jpadilla/pyjwt">https://github.com/jpadilla/pyjwt</a></li>
+<li><a href="https://github.com/mpdavis/python-jose">https://github.com/mpdavis/python-jose</a></li>
+<li><a href="https://github.com/latchset/jwcrypto">https://github.com/latchset/jwcrypto</a></li>
+</ul>
+
+<pre><code class="language-csharp">// official sample from RFC7515 in C#
+static byte [] base64urldecode(string arg)
+     {
+       string s = arg;
+       s = s.Replace('-', '+'); // 62nd char of encoding
+       s = s.Replace('_', '/'); // 63rd char of encoding
+       switch (s.Length % 4) // Pad with trailing '='s
+       {
+         case 0: break; // No pad chars in this case
+         case 2: s += &quot;==&quot;; break; // Two pad chars
+         case 3: s += &quot;=&quot;; break; // One pad char
+         default: throw new System.Exception(
+           &quot;Illegal base64url string!&quot;);
+       }
+       return Convert.FromBase64String(s); // Standard base64 decoder
+     }
+</code></pre>
+
+<blockquote>
+<p>As per the example code above, the number of &lsquo;=&rsquo; padding characters
+   that needs to be added to the end of a base64url-encoded string
+   without padding to turn it into one with padding is a deterministic
+   function of the length of the encoded string.  Specifically, if the
+   length mod 4 is 0, no padding is added; if the length mod 4 is 2, two
+   &lsquo;=&rsquo; padding characters are added; if the length mod 4 is 3, one &lsquo;=&rsquo;
+   padding character is added; if the length mod 4 is 1, the input is
+   malformed.</p>
+</blockquote>
+
+<pre><code class="language-python"># jwcrypto implementation of JWS Appendix C
+# this is a naive translation from C#, not pythonic
+def base64url_decode(payload):
+    l = len(payload) % 4
+    if l == 2:
+        payload += '=='
+    elif l == 3:
+        payload += '='
+    elif l != 0:
+        raise ValueError('Invalid base64 string')
+    return urlsafe_b64decode(payload.encode('utf-8'))
+
+# python-jose implementation
+def base64url_decode(input):
+    &quot;&quot;&quot;Helper method to base64url_decode a string.
+    Args:
+        input (str): A base64url_encoded string to decode.
+    &quot;&quot;&quot;
+    rem = len(input) % 4
+
+    if rem &gt; 0:
+        input += b'=' * (4 - rem)
+
+    return base64.urlsafe_b64decode(input)
+
+# pyjwt's implementation has well considered the python2/3 about string and bytes
+# that probably explained well why it get most stars in github
+def base64url_decode(input):
+    if isinstance(input, text_type):
+        input = input.encode('ascii')   ## can utf-8 here better?
+
+    rem = len(input) % 4
+
+    if rem &gt; 0:
+        input += b'=' * (4 - rem)
+
+    return base64.urlsafe_b64decode(input)
+</code></pre>
+
+<p>from the repo structure</p>
+
+<h2 id="snippet">Snippet</h2>
+
+<pre><code class="language-python"># example encode header
+
+import base64
+
+def jwt_encode_header(header):
+    return base64.urlsafe_b64encode(
+        header if isinstance(header, bytes)
+            else header.encode('utf-8')).replace(
+            b'=', b'')
+
+header = '{&quot;typ&quot;: &quot;JWT&quot;, &quot;alg&quot;: &quot;HS256&quot;}'
+jose = jwt_encode_header(header)  # JSON Object Signing &amp; Encryption
+&gt;&gt;&gt;  b'eyJ0eXAiOiAiSldUIiwgImFsZyI6ICJIUzI1NiJ9'
+</code></pre>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fjwt%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fjwt%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fjwt%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=JWT - https%3a%2f%2fbyronz.github.io%2fposts%2fjwt%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fjwt%2f&title=JWT" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/html.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/csharp.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>

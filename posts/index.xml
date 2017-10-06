@@ -24,6 +24,17 @@
     </item>
     
     <item>
+      <title>JWT</title>
+      <link>https://byronz.github.io/posts/jwt/</link>
+      <pubDate>Mon, 02 Oct 2017 10:53:53 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/jwt/</guid>
+      <description>Structure  JJJJ.PPPPPPP.SSSSSSSS
+  JOSE Payload Signature  RFCs  JWS JWT  Usage Validation Algorithm  7.2. Validating a JWT
+When validating a JWT, the following steps are performed. The order of the steps is not significant in cases where there are no dependencies between the inputs and outputs of the steps. If any of the listed steps fail, then the JWT MUST be rejected &amp;ndash; that is, treated by the application as an invalid input.</description>
+    </item>
+    
+    <item>
       <title>Narcos</title>
       <link>https://byronz.github.io/posts/eng-1/</link>
       <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
