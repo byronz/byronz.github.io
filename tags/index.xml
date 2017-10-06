@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on igni 🇨🇳 🇨🇦</title>
+    <title>Tags on </title>
     <link>https://byronz.github.io/tags/</link>
-    <description>Recent content in Tags on igni 🇨🇳 🇨🇦</description>
+    <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
@@ -49,11 +49,29 @@
     </item>
     
     <item>
+      <title>Jira</title>
+      <link>https://byronz.github.io/tags/jira/</link>
+      <pubDate>Mon, 02 Oct 2017 13:17:01 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Narcos</title>
       <link>https://byronz.github.io/tags/narcos/</link>
       <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/narcos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scrum</title>
+      <link>https://byronz.github.io/tags/scrum/</link>
+      <pubDate>Mon, 02 Oct 2017 13:17:01 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/scrum/</guid>
       <description></description>
     </item>
     
@@ -85,11 +103,11 @@
     </item>
     
     <item>
-      <title>语言</title>
-      <link>https://byronz.github.io/tags/%E8%AF%AD%E8%A8%80/</link>
+      <title>語言</title>
+      <link>https://byronz.github.io/tags/%E8%AA%9E%E8%A8%80/</link>
       <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
       
-      <guid>https://byronz.github.io/tags/%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://byronz.github.io/tags/%E8%AA%9E%E8%A8%80/</guid>
       <description></description>
     </item>
     

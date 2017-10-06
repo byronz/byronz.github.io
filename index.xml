@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>igni 🇨🇳 🇨🇦</title>
+    <title></title>
     <link>https://byronz.github.io/</link>
-    <description>Recent content on igni 🇨🇳 🇨🇦</description>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 28 Sep 2017 17:15:20 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 13:17:01 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scrum Snippet</title>
+      <link>https://byronz.github.io/posts/scrum/</link>
+      <pubDate>Mon, 02 Oct 2017 13:17:01 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/scrum/</guid>
+      <description> Tip for new JIRA UI, you can type username to do quick filter
+ user name by alphabeta order
+- abirrell - acaron - bzhu - cengsstrom 🐞 - dsoloviev - gkankava - hhussein - izenbaei - jlee - jlau - lesposo - larabuli - mrivet - pteng - shshah - twang 🐞 - vho  </description>
+    </item>
     
     <item>
       <title>Narcos</title>
