@@ -5,20 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
 <meta content="Byron ZHU" name="author">
-<meta property="og:title" content="My blog site setup tips - 術">
+<meta property="og:title" content="My blog site setup tips - 雜">
 <meta property="og:url" content="https://byronz.github.io/posts/notes_hugo/">
 <meta property="og:description" content="tech blog">
 <meta property="og:type" content="website" />
-<title>My blog site setup tips | 術</title>
+<title>My blog site setup tips | 雜</title>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
+    showProcessingMessages: false,
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
   });
 </script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 <link rel="stylesheet" href="https://byronz.github.io/css/style.css">
 <link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -32,7 +33,7 @@
   <div class="container">
     <nav class="nav">
       <div class="nav-left">
-        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">術</h1></a>
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
       </div>
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
@@ -80,13 +81,37 @@
 
     
     <div class="content">
-      <p>The first mistake you might have about <a href="https://help.github.com/articles/user-organization-and-project-pages/"><strong>Github Pages</strong></a> is about the subtle difference between <em>User &amp; Org Pages</em> and <em>Project Page</em>. It takes me a while to realize that the first page can only point to the static content in master branch, which you don&rsquo;t have the possiblity of switching to gh-page branch or master/doc (you can do that with project repo though). So you only publish your generated static content in <em>User Page</em> as git submodule.</p>
+      
+
+<p>The first mistake you might have about <a href="https://help.github.com/articles/user-organization-and-project-pages/"><strong>Github Pages</strong></a> is about the subtle difference between <em>User &amp; Org Pages</em> and <em>Project Page</em>. It takes me a while to realize that the first page can only point to the static content in master branch, which you don&rsquo;t have the possiblity of switching to gh-page branch or master/doc (you can do that with project repo though). So you only publish your generated static content in <em>User Page</em> as git submodule.</p>
 
 <p><img src="/img/master-lock.png" alt="master locked" title="Master branch is locked for User &amp; Org Repo" /></p>
 
 <p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Hugo deployment section</a> <code>Host GitHub User or Organization Pages</code> deliberates the steps and demonstrates how to set the git submodule.</p>
 
 <p>Few themes also good for technical blogs: <em>After Dark</em>, <em>Hugo Nuo</em>, <em>Future Imperfect</em>, <em>Cactus</em>.</p>
+
+<h2 id="hack-in-header-html">Hack in Header.html</h2>
+
+<p>the hucore template has an issue in rendering LaTex math using MathJax</p>
+
+<p>remove the setting in header and footer and put this</p>
+
+<pre><code>&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+MathJax.Hub.Config({
+    tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; },
+         extensions: [&quot;AMSmath.js&quot;, &quot;AMSsymbols.js&quot;] }
+  }
+});
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; async src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;
+</code></pre>
 
     </div>
     
@@ -109,29 +134,21 @@
   </div>
 </section>
 
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
-
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/html.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/csharp.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
 

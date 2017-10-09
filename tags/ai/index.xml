@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ai on 雜</title>
+    <link>https://byronz.github.io/tags/ai/</link>
+    <description>Recent content in Ai on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 06 Oct 2017 21:58:37 -0400</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ML Week1</title>
+      <link>https://byronz.github.io/posts/ml/</link>
+      <pubDate>Fri, 06 Oct 2017 21:58:37 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/ml/</guid>
+      <description>Andrew Ng&amp;rsquo;s ML Course Note
+Diagram Supervised Learning  In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.
+Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function.</description>
+    </item>
+    
+  </channel>
+</rss>

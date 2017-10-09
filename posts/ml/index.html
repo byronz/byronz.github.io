@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="ML Week1 - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/ml/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>ML Week1 | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+  });
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">ML Week1</h1>
+    <h2 class="subtitle is-5">October 6, 2017 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/ml">ML</a>
+    
+        <a class="button is-link" href="/tags/ai">AI</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p><a href="https://www.coursera.org/learn/machine-learning/home/welcome">Andrew Ng&rsquo;s ML Course Note</a></p>
+
+<h2 id="diagram">Diagram</h2>
+
+<p><img src="https://de.mathworks.com/help/stats/machinelearning_supervisedunsupervised.png" alt="supervised vs unsupervised" title="aaa" /></p>
+
+<h2 id="supervised-learning">Supervised Learning</h2>
+
+<blockquote>
+<p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
+
+<p>Supervised learning problems are categorized into &ldquo;regression&rdquo; and &ldquo;classification&rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
+</blockquote>
+
+<ul>
+<li>regression =&gt; continuous value  (predict housing price)</li>
+<li>classificiation =&gt; discrete value  (yes, no)</li>
+</ul>
+
+<p>note: infinitie attributes Support Vector Machine
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/-Z4aojJ-pdg" frameborder="0" allowfullscreen></iframe>--></p>
+
+<h2 id="unsupervised-learning">Unsupervised Learning</h2>
+
+<blockquote>
+<p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don&rsquo;t necessarily know the effect of the variables.</p>
+</blockquote>
+
+<ul>
+<li>Clustering  =&gt;   (google news, DNA)</li>
+</ul>
+
+<h2 id="cost-function">Cost Function</h2>
+
+<p>exmaple to take</p>
+
+<p>Gradient Descent</p>
+
+<p>$\theta_0 :=  \theta<em>0 - \alpha \frac{1}{m} \sum</em>{i=1}^{m} (h_\theta(x_i) - y_i)$</p>
+
+<p><img src="https://qph.ec.quoracdn.net/main-qimg-b7a3a254830ac374818cdce3fa5a7f17.webp" alt="GD" /></p>
+
+<blockquote>
+<p><em>concerns</em>: local minimal, control of rate $\alpha$, cost if training data is big</p>
+</blockquote>
+
+<p><img src="https://i.imgur.com/2dKCQHh.gif?1" alt="advanced gradient descent algorithms" /></p>
+
+<h2 id="linear-algebra">Linear Algebra</h2>
+
+<blockquote>
+<ul>
+<li>$A_{ij}$ refers to the element in the ith row and jth column of matrix A.</li>
+<li>A vector with &lsquo;n&rsquo; rows is referred to as an &lsquo;n&rsquo;-dimensional vector. vi refers to the element in the ith row of the vector.</li>
+<li>Matrices are usually denoted by uppercase names while vectors are lowercase.</li>
+<li>&ldquo;Scalar&rdquo; means that an object is a single value, not a vector or matrix.</li>
+<li>ℝ refers to the set of scalar real numbers.</li>
+<li>ℝ𝕟 refers to the set of n-dimensional vectors of real numbers.</li>
+<li>vector =&gt; nx1 matrix</li>
+<li>Matrices are not commutative: A∗B≠B∗A</li>
+<li>Matrices are associative: (A∗B)∗C=A∗(B∗C)</li>
+<li>$
+\begin{bmatrix} a &amp; b \newline c &amp; d \newline e &amp; f \end{bmatrix} *\begin{bmatrix} x \newline y \newline \end{bmatrix} =\begin{bmatrix} a*x + b*y \newline c*x + d*y \newline e*x + f*y\end{bmatrix}
+$</li>
+</ul>
+</blockquote>
+
+<h2 id="octave-matlab">Octave &amp; Matlab</h2>
+
+<p><a href="https://www.gnu.org/software/octave/">https://www.gnu.org/software/octave/</a></p>
+
+<h2 id="glossary">Glossary</h2>
+
+<h3 id="tangent-line">tangent line</h3>
+
+<p>切线</p>
+
+<p><img src="http://images.tutorvista.com/cms/images/113/tangent-secant-line.png" alt="" /></p>
+
+<h3 id="reciprocal">reciprocal</h3>
+
+<p>倒数
+<img src="https://www.gstatic.com/onebox/dictionary/etymology/en/desktop/72d84d40572d5e942d064704d5685640cb0d4d0caf023186e84a5860bf5677a4.png" alt="" /></p>
+
+<h3 id="derivative">derivative</h3>
+
+<p>求导</p>
+
+<h3 id="scalar">scalar</h3>
+
+<p>标量</p>
+
+<blockquote>
+<p>having only magnitude, not direction.</p>
+</blockquote>
+
+<p>versus <em>vector</em> has both magnitude &amp; direction</p>
+
+<p><img src="http://i.ebayimg.com/images/g/5lcAAMXQtRxSJ39w/s-l1600.jpg" alt="" /></p>
+
+<h3 id="polynomial">polynomial</h3>
+
+<p>多项式</p>
+
+<h3 id="maligant">maligant</h3>
+
+<p>tending to invade normal tissue or to recur after removal; cancerous</p>
+
+<h3 id="benign">benign</h3>
+
+<p>not harmful in effect: in particular, (of a tumor) not malignant.</p>
+
+<h3 id="cohesive">cohesive</h3>
+
+<p><img src="https://www.gstatic.com/onebox/dictionary/etymology/en/desktop/eaab5dab42c6ccf46adff46463ae070d5f78d51c9f1cca43eb98cd1dabeb7261.png" alt="origin" /></p>
+
+<h3 id="slope">slope</h3>
+
+<p>斜率</p>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fml%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fml%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fml%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=ML%20Week1 - https%3a%2f%2fbyronz.github.io%2fposts%2fml%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fml%2f&title=ML%20Week1" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
