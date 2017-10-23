@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
 <meta content="Byron ZHU" name="author">
-<meta property="og:title" content="語言 - 雜">
-<meta property="og:url" content="https://byronz.github.io/tags/%E8%AA%9E%E8%A8%80/">
+<meta property="og:title" content="ML Week2 - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/ml_w2/">
 <meta property="og:description" content="tech blog">
 <meta property="og:type" content="website" />
-<title>語言 | 雜</title>
+<title>ML Week2 | 雜</title>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -28,6 +28,7 @@
 
 </head>
 
+<body>
 <section class="section">
   <div class="container">
     <nav class="nav">
@@ -63,82 +64,72 @@
 
 <section class="section">
   <div class="container">
+    <h1 class="title">ML Week2</h1>
+    <h2 class="subtitle is-5">October 8, 2017 by Byron ZHU</h2>
     
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/eng/">習詞集</a></h1>
-      <h2 class="subtitle is-5">October 13, 2017</h2>
+    <div class="content">
       
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/english">english</a>
-    
-        <a class="button is-link" href="/tags/%E8%AA%9E%E8%A8%80">語言</a>
-    
-</div>
 
-      
-      <div class="content">
-        demystify vs elaborate  make (a difficult or esoteric subject) clearer and easier to understand. develop or present (a theory, policy, or system) in detail  -ent resilient  (of a person or animal) able to withstand or recover quickly from difficult conditions (of a substance or object) able to recoil or spring back into shape after bending, stretching, or being compressed.  transient lasting only for a short time; impermanent.
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/eng/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/narcos/">Narcos</a></h1>
-      <h2 class="subtitle is-5">September 28, 2017</h2>
-      
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/narcos">narcos</a>
-    
-        <a class="button is-link" href="/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE">朝花夕拾</a>
-    
-        <a class="button is-link" href="/tags/%E8%AA%9E%E8%A8%80">語言</a>
-    
-</div>
+<h2 id="multivariate-linear-regression">Multivariate Linear Regression</h2>
 
-      
-      <div class="content">
-        I just watched 3 seasons of netflix&rsquo;s series Narcos, really enjoyed the south american landscape scene and latino guitar. The script is about 70% Español and 30% English.
-kingpin - キングピン S3E1 The Kingpin Strategy
- a person or thing that is essential to the success of an organization or operation.
- smuggler synonyms: - trafficker - mule  paranoid  characterized by suspiciousness, persecutory trends, or megalomania behaving in a paranoid manner with accusations of persecutions
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/narcos/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
+<p>Hypothesis
+$$
+h_\theta(x) =
+\begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} &hellip; \hspace{2em} \theta_n \end{bmatrix}
+\begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix}
+= \theta^T x
+$$</p>
+
+<p>Gradient Descent Practices</p>
+
+<ul>
+<li>Scaling or normalize the range (e.g. mean normalization)</li>
+<li>learning rate $\alpha$</li>
+</ul>
+
+<p><img src="/img/gradient.png" alt="graident" /></p>
+
+<h2 id="ploynomial-regression">Ploynomial Regression</h2>
+
+<p>typical equations:</p>
+
+<ul>
+<li>$\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2$</li>
+<li>$\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2 + \theta_3x_3^3$</li>
+<li>$\theta_0x_0 + \theta_1x_1 + \theta_2 \sqrt{x_2}$</li>
+</ul>
+
+<h2 id="normal-equation">Normal Equation</h2>
+
+<p>if n &gt; 1000, hard to solve the inverse of $(X^TX)^{-1}$</p>
+
+<p>possible problem for inverstible</p>
+
+<ul>
+<li>redudant feature</li>
+<li>n&gt;m</li>
+</ul>
+
+<h2 id="octave">Octave</h2>
+
+<p>who
+whos
+load</p>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=ML%20Week2 - https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f&title=ML%20Week2" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
     
   </div>
 </section>
-<section class="section">
-  <div class="container">
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-          
-        </div>
-      </div>
-      <div class="level-right is-marginless">
-        <div class="level-item">
-          
-        </div>
-      </div>
-    </nav>
-  </div>
-</section>
+
 
 <section class="section">
   <div class="container has-text-centered">
@@ -165,3 +156,4 @@ kingpin - キングピン S3E1 The Kingpin Strategy
 <script>hljs.initHighlightingOnLoad();</script>
 
 
+</body>

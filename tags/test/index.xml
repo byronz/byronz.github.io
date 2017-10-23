@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on 雜</title>
+    <link>https://byronz.github.io/tags/test/</link>
+    <description>Recent content in Test on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 14 Oct 2017 10:36:09 -0400</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Continuous Delivery</title>
+      <link>https://byronz.github.io/posts/test/</link>
+      <pubDate>Sat, 14 Oct 2017 10:36:09 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/test/</guid>
+      <description>Release Pipeline  SCM (github) Niagara (automation test suite) JIRA Winterfell (infrastructure) CI Server Cloud (aws)  Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on your CI server. the unitary tests is also included in the job.
+If any automation test needed for the feature, the test case can be implemented in paraelle.
+If everything is OK, we can deploy everything in stage, this step is currently manual.</description>
+    </item>
+    
+  </channel>
+</rss>
