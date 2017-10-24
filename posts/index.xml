@@ -18,9 +18,7 @@
       <pubDate>Sat, 14 Oct 2017 10:36:09 -0400</pubDate>
       
       <guid>https://byronz.github.io/posts/test/</guid>
-      <description>Release Pipeline  SCM (github) Niagara (automation test suite) JIRA Winterfell (infrastructure) CI Server Cloud (aws)  Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on your CI server. the unitary tests is also included in the job.
-If any automation test needed for the feature, the test case can be implemented in paraelle.
-If everything is OK, we can deploy everything in stage, this step is currently manual.</description>
+      <description>Release Pipeline SCM (github) Niagara (automation test suite) JIRA Winterfell (infrastructure) CI Server Cloud (aws) Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on your CI server. the unitary tests is also included in the job. If any automation test needed for the feature, the test case can be implemented in paraelle. If everything is OK, we can deploy everything in</description>
     </item>
     
     <item>
@@ -50,9 +48,7 @@ Gradient Descent Practices
       <pubDate>Fri, 06 Oct 2017 21:58:37 -0400</pubDate>
       
       <guid>https://byronz.github.io/posts/ml/</guid>
-      <description>Andrew Ng&amp;rsquo;s ML Course Note
-Diagram Supervised Learning  In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.
-Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function.</description>
+      <description>Andrew Ng&amp;rsquo;s ML Course Note Diagram Supervised Learning In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output. Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying</description>
     </item>
     
     <item>
@@ -83,10 +79,7 @@ When validating a JWT, the following steps are performed. The order of the steps
       <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
       
       <guid>https://byronz.github.io/posts/narcos/</guid>
-      <description>I just watched 3 seasons of netflix&amp;rsquo;s series Narcos, really enjoyed the south american landscape scene and latino guitar. The script is about 70% Español and 30% English.
-kingpin - キングピン S3E1 The Kingpin Strategy
- a person or thing that is essential to the success of an organization or operation.
- smuggler synonyms: - trafficker - mule  paranoid  characterized by suspiciousness, persecutory trends, or megalomania behaving in a paranoid manner with accusations of persecutions</description>
+      <description>I just watched 3 seasons of netflix&amp;rsquo;s series Narcos, really enjoyed the south american landscape scene and latino guitar. The script is about 70% Español and 30% English. kingpin - キングピン S3E1 The Kingpin Strategy a person or thing that is essential to the success of an organization or operation. smuggler synonyms: - trafficker - mule paranoid characterized by suspiciousness,</description>
     </item>
     
     <item>

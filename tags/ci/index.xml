@@ -18,9 +18,7 @@
       <pubDate>Sat, 14 Oct 2017 10:36:09 -0400</pubDate>
       
       <guid>https://byronz.github.io/posts/test/</guid>
-      <description>Release Pipeline  SCM (github) Niagara (automation test suite) JIRA Winterfell (infrastructure) CI Server Cloud (aws)  Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on your CI server. the unitary tests is also included in the job.
-If any automation test needed for the feature, the test case can be implemented in paraelle.
-If everything is OK, we can deploy everything in stage, this step is currently manual.</description>
+      <description>Release Pipeline SCM (github) Niagara (automation test suite) JIRA Winterfell (infrastructure) CI Server Cloud (aws) Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on your CI server. the unitary tests is also included in the job. If any automation test needed for the feature, the test case can be implemented in paraelle. If everything is OK, we can deploy everything in</description>
     </item>
     
   </channel>

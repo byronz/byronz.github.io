@@ -18,9 +18,7 @@
       <pubDate>Fri, 06 Oct 2017 21:58:37 -0400</pubDate>
       
       <guid>https://byronz.github.io/posts/ml/</guid>
-      <description>Andrew Ng&amp;rsquo;s ML Course Note
-Diagram Supervised Learning  In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.
-Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function.</description>
+      <description>Andrew Ng&amp;rsquo;s ML Course Note Diagram Supervised Learning In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output. Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying</description>
     </item>
     
   </channel>
