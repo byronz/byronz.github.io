@@ -96,29 +96,39 @@
 
 <p><img src="/img/release.png" alt="release overview" /></p>
 
+<ol>
+<li><p>Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on our CI server; the unit tests is also included in the job.</p>
+
+<p>a. If any automation test needed for the feature, the automation cases can be implemented by tester in parallel.</p></li>
+
+<li><p>If everything is OK, we can deploy everything in stage, this step is currently manual. Note: the deploying steps also include a step to report build version to winterfell.</p></li>
+
+<li><p>The regression can be automatically trigger by this report on winterfell side upon the report</p>
+
+<p>a. Additional exploratory tests and load tests might need to manually perform at this moment as it has better chance to discover defects.</p></li>
+
+<li><p>winterfell offers the interface to analyze the test results</p>
+
+<p>a. If regression failed, the failure analysis is performed. The additional patch is requested</p></li>
+
+<li><p>Code merge from develop into master, which triggers again the build job and unit tests.</p></li>
+
+<li><p>Deploys the build in production and reports winterfell</p>
+
+<p>a. smoke test is triggered to quickly determine if anything suspicious during deployment. A rollback is executed in case of trouble</p></li>
+</ol>
+
+<h3 id="components">Components</h3>
+
 <ul>
 <li>SCM (github)</li>
 <li>Niagara (automation test suite)</li>
-<li>JIRA</li>
 <li>Winterfell (infrastructure)</li>
 <li>CI Server</li>
 <li>Cloud (aws)</li>
 </ul>
 
-<p>Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on your CI server. the unitary tests is also included in the job.</p>
-
-<p>If any automation test needed for the feature, the test case can be implemented in paraelle.</p>
-
-<p>If everything is OK, we can deploy everything in stage, this step is currently <em>manual</em>.
-Note: the deploy ansible steps also include a step to report build version to winterfell</p>
-
-<p>The regression can be automatically trigger by this report on Winterfell side upon the report</p>
-
-<p>Additonal exploratory tests and load tests might need to manually perform at this moment as it has better chance to discover defects.</p>
-
-<p>We can merge the develop branch into master if everything is OK. This triggers another build job in jenkins, and again unit tests are executed.</p>
-
-<h2 id="the-continuous-delivery-flow">the continuous delivery flow</h2>
+<h3 id="test-flow">Test Flow</h3>
 
 <p><img src="https://continuousdelivery.com/images/pipeline-branching.png" alt="ss" /></p>
 
