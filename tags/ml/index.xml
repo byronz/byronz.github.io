@@ -7,10 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 06 Oct 2017 21:58:37 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 24 Oct 2017 22:36:04 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ML Week4 - Neural Network</title>
+      <link>https://byronz.github.io/posts/ml4/</link>
+      <pubDate>Tue, 24 Oct 2017 22:36:04 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/ml4/</guid>
+      <description>Brain  auditory cortex somatosensory cortex  NN Model  Neuro.IO
+Dentrite =&amp;gt; Axon
+input layer &amp;gt; hidden layer (intermediate layer) &amp;gt; output layer
+ all hidden layer nodes are called &amp;ldquo;activation units&amp;rdquo;
+$$a_i^{(j)} = \text{&amp;ldquo;activation&amp;rdquo; of unit $i$ in layer $j$}$$ $$\Theta^{(j)} = \text{matrix of weights controlling function mapping from layer $j$ to layer $j+1$}$$
+Forward Propagation using trained parameters $\theta_{n}$ we can predict the output by calculate the output layer value</description>
+    </item>
+    
+    <item>
+      <title>ML Week2</title>
+      <link>https://byronz.github.io/posts/ml_w2/</link>
+      <pubDate>Sun, 08 Oct 2017 20:08:02 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/ml_w2/</guid>
+      <description>Multivariate Linear Regression Hypothesis $$ h_\theta(x) = \begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} &amp;hellip; \hspace{2em} \theta_n \end{bmatrix} \begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix} = \theta^T x $$
+Gradient Descent Practices
+ Scaling or normalize the range (e.g. mean normalization) learning rate $\alpha$  Ploynomial Regression typical equations:
+ $\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2$ $\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2 + \theta_3x_3^3$ $\theta_0x_0 + \theta_1x_1 + \theta_2 \sqrt{x_2}$  Normal Equation if n &amp;gt; 1000, hard to solve the inverse of $(X^TX)^{-1}$</description>
+    </item>
     
     <item>
       <title>ML Week1</title>

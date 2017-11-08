@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
 <meta content="Byron ZHU" name="author">
-<meta property="og:title" content="ML Week2 - 雜">
-<meta property="og:url" content="https://byronz.github.io/posts/ml_w2/">
+<meta property="og:title" content="換胎 tips - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/tire/">
 <meta property="og:description" content="tech blog">
 <meta property="og:type" content="website" />
-<title>ML Week2 | 雜</title>
+<title>換胎 tips | 雜</title>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -75,14 +75,12 @@
 
 <section class="section">
   <div class="container">
-    <h1 class="title">ML Week2</h1>
-    <h2 class="subtitle is-5">October 8, 2017 by Byron ZHU</h2>
+    <h1 class="title">換胎 tips</h1>
+    <h2 class="subtitle is-5">November 7, 2017 by Byron ZHU</h2>
     
       <div class="tags">
     
-        <a class="button is-link" href="/tags/ml">ML</a>
-    
-        <a class="button is-link" href="/tags/ai">AI</a>
+        <a class="button is-link" href="/tags/%E6%8F%9B%E8%83%8E">換胎</a>
     
 </div>
 
@@ -90,54 +88,53 @@
     <div class="content">
       
 
-<h2 id="multivariate-linear-regression">Multivariate Linear Regression</h2>
+<hr />
 
-<p>Hypothesis
-$$
-h_\theta(x) =
-\begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} &hellip; \hspace{2em} \theta_n \end{bmatrix}
-\begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix}
-= \theta^T x
-$$</p>
+<ol>
+<li>driveway前提車位置應該注意預留給千斤頂的區域勁量平， 拿出木板直接夾在後輪前後</li>
+<li>查看上次輪胎對方順序『LF RF RB LB』，按對調pattern直接把輪胎放在要對調的輪胎旁邊
+<img src="https://www.tirerack.com/images/tires/tiretech/tire_rotation_abc.png" alt="rotation" /></li>
+<li>手套，🔧，力矩扳手， Socket『扳手插孔為1/2&rsquo;, jeep <sup>3</sup>&frasl;<sub>4</sub>, sorento 13/16』</li>
+<li>力矩扳手按照手冊設定好扭矩</li>
+<li>jeep 100 ft/lbs</li>
+<li>sorento 65-79 ft/lbs</li>
+<li>每個輪胎具體順序</li>
+</ol>
 
-<p>Gradient Descent Practices</p>
+<p>a. 確認對角輪胎有木板夾住
+b. 用千斤頂略抬高至車輪還未離開地面，此時車身還有重量在輪胎上，但更便於下螺絲，下螺絲為逆時針方向
+c. 按star pattern鬆動螺絲
+d. 繼續抬高千斤頂至輪胎完全離開地面並且有足夠空間可換胎
+e. 更換輪胎， 換上輪胎是可坐在地上用腳力固定輪胎
+f. 按star pattern固定螺絲至手無法轉點socket，確認輪胎吻合后用扳手在緊一圈
+g. 輕放千斤頂至a時位置，用扭力扳手鎖定螺絲</p>
+
+<ol>
+<li>確認輪胎氣壓， 檢查換下的輪胎，看是否有吃胎現象</li>
+</ol>
+
+<h3 id="jeep">Jeep</h3>
 
 <ul>
-<li>Scaling or normalize the range (e.g. mean normalization)</li>
-<li>learning rate $\alpha$</li>
+<li>Summer Tire  2016 April</li>
+<li>Winter Tire 2013 December</li>
 </ul>
 
-<p><img src="/img/gradient.png" alt="graident" /></p>
-
-<h2 id="ploynomial-regression">Ploynomial Regression</h2>
-
-<p>typical equations:</p>
+<h3 id="sorento">Sorento</h3>
 
 <ul>
-<li>$\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2$</li>
-<li>$\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2 + \theta_3x_3^3$</li>
-<li>$\theta_0x_0 + \theta_1x_1 + \theta_2 \sqrt{x_2}$</li>
-</ul>
-
-<h2 id="normal-equation">Normal Equation</h2>
-
-<p>if n &gt; 1000, hard to solve the inverse of $(X^TX)^{-1}$</p>
-
-<p>possible problem for inverstible</p>
-
-<ul>
-<li>redudant feature</li>
-<li>n&gt;m</li>
+<li>Summer Tire 2017</li>
+<li>Winter Tire 2016 Dec</li>
 </ul>
 
     </div>
     
         <div class="nav-left">
-    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://twitter.com/home?status=ML%20Week2 - https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
-    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fml_w2%2f&title=ML%20Week2" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2ftire%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2ftire%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2ftire%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=%e6%8f%9b%e8%83%8e%20tips - https%3a%2f%2fbyronz.github.io%2fposts%2ftire%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2ftire%2f&title=%e6%8f%9b%e8%83%8e%20tips" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
     
     </div>
     

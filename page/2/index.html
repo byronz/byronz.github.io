@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
+	<meta name="generator" content="Hugo 0.27.1" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
 <meta content="Byron ZHU" name="author">
-<meta property="og:title" content="Ml - 雜">
-<meta property="og:url" content="https://byronz.github.io/tags/ml/">
+<meta property="og:title" content="雜">
+<meta property="og:url" content="https://byronz.github.io/">
 <meta property="og:description" content="tech blog">
 <meta property="og:type" content="website" />
-<title>Ml | 雜</title>
+<title>雜</title>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -76,75 +77,26 @@
   <div class="container">
     
     <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/ml4/">ML Week4 - Neural Network</a></h1>
-      <h2 class="subtitle is-5">October 24, 2017</h2>
+      <h1 class="title"><a href="https://byronz.github.io/posts/notes_hugo/">My blog site setup tips</a></h1>
+      <h2 class="subtitle is-5">September 21, 2017</h2>
       
         <div class="tags">
     
-        <a class="button is-link" href="/tags/ml">ML</a>
+        <a class="button is-link" href="/tags/hugo">hugo</a>
     
-        <a class="button is-link" href="/tags/ai">AI</a>
+        <a class="button is-link" href="/tags/github">github</a>
+    
+        <a class="button is-link" href="/tags/hucore">hucore</a>
+    
+        <a class="button is-link" href="/tags/tech">tech</a>
     
 </div>
 
       
       <div class="content">
-        Brain  auditory cortex somatosensory cortex  NN Model  Neuro.IO
-Dentrite =&gt; Axon
-input layer &gt; hidden layer (intermediate layer) &gt; output layer
- all hidden layer nodes are called &ldquo;activation units&rdquo;
-$$a_i^{(j)} = \text{&ldquo;activation&rdquo; of unit $i$ in layer $j$}$$ $$\Theta^{(j)} = \text{matrix of weights controlling function mapping from layer $j$ to layer $j+1$}$$
-Forward Propagation using trained parameters $\theta_{n}$ we can predict the output by calculate the output layer value
+        The first mistake you might have about Github Pages is about the subtle difference between User &amp; Org Pages and Project Page. It takes me a while to realize that the first page can only point to the static content in master branch, which you don&rsquo;t have the possiblity of switching to gh-page branch or master/doc (you can do that with project repo though). So you only publish your generated static content in User Page as git submodule.
         
-      </div>
-    </article>
-    
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/ml_w2/">ML Week2</a></h1>
-      <h2 class="subtitle is-5">October 8, 2017</h2>
-      
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/ml">ML</a>
-    
-        <a class="button is-link" href="/tags/ai">AI</a>
-    
-</div>
-
-      
-      <div class="content">
-        Multivariate Linear Regression Hypothesis $$ h_\theta(x) = \begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} &hellip; \hspace{2em} \theta_n \end{bmatrix} \begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix} = \theta^T x $$
-Gradient Descent Practices
- Scaling or normalize the range (e.g. mean normalization) learning rate $\alpha$  Ploynomial Regression typical equations:
- $\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2$ $\theta_0x_0 + \theta_1x_1 + \theta_2x_2^2 + \theta_3x_3^3$ $\theta_0x_0 + \theta_1x_1 + \theta_2 \sqrt{x_2}$  Normal Equation if n &gt; 1000, hard to solve the inverse of $(X^TX)^{-1}$
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/ml_w2/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/ml/">ML Week1</a></h1>
-      <h2 class="subtitle is-5">October 6, 2017</h2>
-      
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/ml">ML</a>
-    
-        <a class="button is-link" href="/tags/ai">AI</a>
-    
-</div>
-
-      
-      <div class="content">
-        Andrew Ng&rsquo;s ML Course Note Diagram Supervised Learning In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output. Supervised learning problems are categorized into &ldquo;regression&rdquo; and &ldquo;classification&rdquo; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/ml/" style="height:28px">
+        ...<a class="button is-link" href="https://byronz.github.io/posts/notes_hugo/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -161,6 +113,13 @@ Gradient Descent Practices
     <nav class="level is-mobile">
       <div class="level-left">
         <div class="level-item">
+          
+          <a class="button" href="/">
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-left"></i>
+            </span>
+            Newer
+          </a>
           
         </div>
       </div>
@@ -196,5 +155,6 @@ Gradient Descent Practices
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
+
 
 

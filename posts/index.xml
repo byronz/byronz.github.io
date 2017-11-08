@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 14 Oct 2017 10:36:09 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2017 21:40:14 -0500</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>換胎 tips</title>
+      <link>https://byronz.github.io/posts/tire/</link>
+      <pubDate>Tue, 07 Nov 2017 21:40:14 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/tire/</guid>
+      <description>driveway前提車位置應該注意預留給千斤頂的區域勁量平， 拿出木板直接夾在後輪前後 查看上次輪胎對方順序『LF RF RB LB』，按對調patter</description>
+    </item>
+    
+    <item>
+      <title>ML Week4 - Neural Network</title>
+      <link>https://byronz.github.io/posts/ml4/</link>
+      <pubDate>Tue, 24 Oct 2017 22:36:04 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/ml4/</guid>
+      <description>Brain  auditory cortex somatosensory cortex  NN Model  Neuro.IO
+Dentrite =&amp;gt; Axon
+input layer &amp;gt; hidden layer (intermediate layer) &amp;gt; output layer
+ all hidden layer nodes are called &amp;ldquo;activation units&amp;rdquo;
+$$a_i^{(j)} = \text{&amp;ldquo;activation&amp;rdquo; of unit $i$ in layer $j$}$$ $$\Theta^{(j)} = \text{matrix of weights controlling function mapping from layer $j$ to layer $j+1$}$$
+Forward Propagation using trained parameters $\theta_{n}$ we can predict the output by calculate the output layer value</description>
+    </item>
     
     <item>
       <title>Continuous Delivery</title>
