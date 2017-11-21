@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Ski Resort Clusterring near Montreal - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/ski/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Ski Resort Clusterring near Montreal | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+  });
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108552865-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108552865-1');
+</script>
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Ski Resort Clusterring near Montreal</h1>
+    <h2 class="subtitle is-5">November 18, 2017 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/k-means">k-means</a>
+    
+        <a class="button is-link" href="/tags/ski-resort">ski resort</a>
+    
+        <a class="button is-link" href="/tags/ml">ml</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p><img src="https://www.lemassif.com/assets/medias/plan-des-pistes.jpg" alt="massif" /></p>
+
+<h2 id="rational">Rational</h2>
+
+<p>My 3rd ski season in montérégie is coming, and this post uses a very basic machine-learning-unsupervised-clusterring algorithm to show an interesting analysis about how to choose your next ski journey.</p>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<p>Quote from wiki page</p>
+
+<blockquote>
+<p>k-means clustering is a method of vector quantization, originally from signal processing, that is popular for cluster analysis in data mining. k-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster. This results in a partitioning of the data space into Voronoi cells.</p>
+
+<p>The problem is computationally difficult (NP-hard); however, there are efficient heuristic algorithms that are commonly employed and converge quickly to a local optimum. These are usually similar to the expectation-maximization algorithm for mixtures of Gaussian distributions via an iterative refinement approach employed by both algorithms. Additionally, they both use cluster centers to model the data; however, k-means clustering tends to find clusters of comparable spatial extent, while the expectation-maximization mechanism allows clusters to have different shapes.</p>
+</blockquote>
+
+<p><img src="http://www.saedsayad.com/images/Clustering_kmeans_c.png" alt="kmeans" /></p>
+
+<p><img src="https://www.projectrhea.org/rhea/images/e/ef/RunyanKmeans.gif" alt="illustration" /></p>
+
+<h2 id="data">Data</h2>
+
+<p>Collecting data is always essential to the success of ML model. Our context is to group various ski resorts near montreal, or more specifically my home into different clusters (term used in machine learning)</p>
+
+<p>The columns represents all the features to consider when dealing with K-means.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>distance(km)</th>
+<th>altitude(m)</th>
+<th>vertical drop(m)</th>
+<th>Skiable area(acres)</th>
+<th>lifts</th>
+<th>night</th>
+<th>easy</th>
+<th>intermediate</th>
+<th>difficult</th>
+<th>extreme</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>st-bruno</td>
+<td>3.4</td>
+<td>175</td>
+<td>134</td>
+<td>50</td>
+<td>4</td>
+<td>true</td>
+<td>10</td>
+<td>6</td>
+<td>2</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>bromont</td>
+<td>86.1</td>
+<td>565</td>
+<td>385</td>
+<td>450</td>
+<td>9</td>
+<td>true</td>
+<td>35</td>
+<td>54</td>
+<td>26</td>
+<td>26</td>
+</tr>
+
+<tr>
+<td>owl&rsquo;s head</td>
+<td>139</td>
+<td>753</td>
+<td>540</td>
+<td>163</td>
+<td>8</td>
+<td>false</td>
+<td>15</td>
+<td>17</td>
+<td>9</td>
+<td>12</td>
+</tr>
+
+<tr>
+<td>orford</td>
+<td>122</td>
+<td>850</td>
+<td>589</td>
+<td>245</td>
+<td>8</td>
+<td>false</td>
+<td>21</td>
+<td>16</td>
+<td>8</td>
+<td>17</td>
+</tr>
+
+<tr>
+<td>sutton</td>
+<td>114</td>
+<td>962</td>
+<td>460</td>
+<td>230</td>
+<td>9</td>
+<td>false</td>
+<td>15</td>
+<td>18</td>
+<td>11</td>
+<td>16</td>
+</tr>
+
+<tr>
+<td>st-sauveur</td>
+<td>91.3</td>
+<td>416</td>
+<td>213</td>
+<td>142</td>
+<td>7</td>
+<td>true</td>
+<td>9</td>
+<td>9</td>
+<td>16</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>olympia</td>
+<td>92.8</td>
+<td>440</td>
+<td>200</td>
+<td>80</td>
+<td>3</td>
+<td>true</td>
+<td>14</td>
+<td>10</td>
+<td>6</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>morin heights</td>
+<td>101</td>
+<td>465</td>
+<td>200</td>
+<td>80</td>
+<td>4</td>
+<td>true</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>mont-blanc</td>
+<td>143</td>
+<td>580</td>
+<td>208</td>
+<td>140</td>
+<td>7</td>
+<td>true</td>
+<td>7</td>
+<td>12</td>
+<td>18</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>mont-tremblant</td>
+<td>160</td>
+<td>875</td>
+<td>645</td>
+<td>665</td>
+<td>11</td>
+<td>false</td>
+<td>22</td>
+<td>28</td>
+<td>32</td>
+<td>14</td>
+</tr>
+
+<tr>
+<td>jay peak</td>
+<td>136</td>
+<td>1209</td>
+<td>656</td>
+<td>385</td>
+<td>9</td>
+<td>false</td>
+<td>14</td>
+<td>31</td>
+<td>34</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>la reserve</td>
+<td>132</td>
+<td>700</td>
+<td>305</td>
+<td>100</td>
+<td>2</td>
+<td>false</td>
+<td>9</td>
+<td>8</td>
+<td>12</td>
+<td>11</td>
+</tr>
+
+<tr>
+<td>le massif</td>
+<td>332</td>
+<td>806</td>
+<td>770</td>
+<td>406</td>
+<td>7</td>
+<td>false</td>
+<td>13</td>
+<td>20</td>
+<td>19</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>mont saint-anne</td>
+<td>283</td>
+<td>800</td>
+<td>625</td>
+<td>547</td>
+<td>5</td>
+<td>true</td>
+<td>15</td>
+<td>33</td>
+<td>14</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>massif du sud</td>
+<td>309</td>
+<td>915</td>
+<td>400</td>
+<td>226</td>
+<td>2</td>
+<td>false</td>
+<td>6</td>
+<td>3</td>
+<td>14</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>stoneham</td>
+<td>262</td>
+<td>593</td>
+<td>346</td>
+<td>333</td>
+<td>4</td>
+<td>true</td>
+<td>8</td>
+<td>11</td>
+<td>16</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="code-snippet">Code Snippet</h2>
+
+<p>A quick dirty python code to generate all code needed for google map api</p>
+
+<pre><code class="language-python">
+import io
+import json
+import numpy as np
+from sklearn.cluster import KMeans
+
+columns = (
+    'distance','alt','vertical','skiable terrain','lifts','night',
+    'easy','intermediate','difficult','extreme')
+
+def parse_ski(stations):
+
+    for col in columns:
+        if col == 'night': # doesn't make sense to scale boolean value
+            for station in stations:
+                station[col] = int(station[col])
+        else:
+            # mean feature scaling
+            buf = [station[col] for station in stations]
+            minval = min(buf)
+            maxval = max(buf)
+            mean = sum(buf)/len(buf)
+            for station in stations:
+                station[col] = (station[col] - mean)/(maxval-minval)
+
+    return io.StringIO('\n'.join(
+        (','.join((str(station.get(col)) for col in columns))
+        for station in stations)
+    ))
+
+# GPS location not shown in the table
+stations = json.loads('your json raw data')
+matrix_fp = np.loadtxt(parse_ski(stations), delimiter=',')
+colors = {
+    k:v
+    for k, v in enumerate(('#4E4EB2','#FF5600','#66CC46','#99A695','#0001FF',))}
+
+for num in (2, 3, 4, 5):
+    print('clusters numbers: ', num)
+    km = KMeans(num, init='k-means++').fit(matrix_fp)
+    locations = {
+        station['name']: {'center': station['gps'], 'color': colors[lbl], 'group': lbl}
+        for station, lbl in zip(stations, km.labels_)
+    }
+    print(locations)
+</code></pre>
+
+<p>For each locations map we can visaulize the result in google map using the official <a href="https://developers.google.com/maps/documentation/javascript/examples/circle-simple">demo examples</a>.</p>
+
+<pre><code class="language-javascript">// This example creates circles on the map, representing populations in North
+// America.
+
+//using the locations generated by python code
+var citymap = {
+  &quot;jay peak&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -72.5071207, &quot;lat&quot;: 44.9376778}}, &quot;Stoneham&quot;: {&quot;color&quot;: &quot;#FFDF43&quot;, &quot;center&quot;: {&quot;lng&quot;: -71.3978895, &quot;lat&quot;: 47.0303657}}, &quot;massif du sud&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -70.4917626, &quot;lat&quot;: 46.6213833}}, &quot;st-bruno&quot;: {&quot;color&quot;: &quot;#FFDF43&quot;, &quot;center&quot;: {&quot;lng&quot;: -73.336873, &quot;lat&quot;: 45.558709}}, &quot;le massif&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -70.59809, &quot;lat&quot;: 47.2820407}}, &quot;la reserve&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -74.183668, &quot;lat&quot;: 46.286398}}, &quot;orford&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -72.223443, &quot;lat&quot;: 45.3176101}}, &quot;olympia&quot;: {&quot;color&quot;: &quot;#FFDF43&quot;, &quot;center&quot;: {&quot;lng&quot;: -74.1552723, &quot;lat&quot;: 45.9004148}}, &quot;owl's head&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -72.2977126, &quot;lat&quot;: 45.0753163}}, &quot;morin heights&quot;: {&quot;color&quot;: &quot;#FFDF43&quot;, &quot;center&quot;: {&quot;lng&quot;: -74.270762, &quot;lat&quot;: 45.899502}}, &quot;sutton&quot;: {&quot;color&quot;: &quot;#14CCC8&quot;, &quot;center&quot;: {&quot;lng&quot;: -72.564034, &quot;lat&quot;: 45.104728}}, &quot;st-sauveur&quot;: {&quot;color&quot;: &quot;#FFDF43&quot;, &quot;center&quot;: {&quot;lng&quot;: -74.1598336, &quot;lat&quot;: 45.8815953}}, &quot;mont-blanc&quot;: {&quot;color&quot;: &quot;#FFDF43&quot;, &quot;center&quot;: {&quot;lng&quot;: -74.4849394, &quot;lat&quot;: 46.1090299}}, &quot;mont-tremblant&quot;: {&quot;color&quot;: &quot;#B25B9F&quot;, &quot;center&quot;: {&quot;lng&quot;: -74.732755, &quot;lat&quot;: 46.1756729}}, &quot;mont saint-anne&quot;: {&quot;color&quot;: &quot;#B25B9F&quot;, &quot;center&quot;: {&quot;lng&quot;: -70.9409543, &quot;lat&quot;: 47.0864416}}, &quot;bromont&quot;: {&quot;color&quot;: &quot;#B25B9F&quot;, &quot;center&quot;: {&quot;lng&quot;: -72.6543549, &quot;lat&quot;: 45.2909317}}
+};
+
+function initMap() {
+  // Create the map.
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: {'lat': 46.1587401,'lng': -71.0195173},
+    mapTypeId: 'terrain'
+  });
+
+  // Construct the circle for each value in citymap.
+  // Note: We scale the area of the circle based on the population.
+  for (var city in citymap) {
+    // Add the circle for this city to the map.
+    var cityCircle = new google.maps.Circle({
+      strokeColor: '#AABBAA',
+      strokeOpacity: 0.5,
+      strokeWeight: 1.5,
+      fillColor: citymap[city].color,
+      fillOpacity: 0.9,
+      map: map,
+      center: citymap[city].center,
+      radius: 3500
+    });
+  }
+}
+</code></pre>
+
+<h2 id="result">Result</h2>
+
+<p>Before any analysis, we can think the best cluster number should be 3 or 4.</p>
+
+<ul>
+<li>The primary difference is the size of moutain: vertical drop and skiable area. This basically decides the numbers of trails</li>
+<li>The distance from home is also another important thing to consider</li>
+<li>minor factor also includes whether openning at night</li>
+</ul>
+
+<h3 id="cluster-2">Cluster:2</h3>
+
+<p><img src="/img/ski_c2.png" alt="2clusters" /></p>
+
+<h3 id="cluster-3">Cluster 3</h3>
+
+<p>Note the initialization have big impact on output, this is a perfect example showing two outcomes, but interestingly, I think both of them make sense.</p>
+
+<p>The first result has Bromont as single cluster, which reminds some of AlphaGo&rsquo;s moves are labelled as Go Seigen style. It&rsquo;s the biggest resort in the area with night operation hours.
+<img src="/img/ski_c3.png" alt="3clusters" /></p>
+
+<p>The second puts Mont-Tremblant, Bromont and Saint-Anne together. All 3 are very tourist-oriented and successful in commercial perspective.
+<img src="/img/ski.png" alt="ski" /></p>
+
+<h3 id="cluster-4">Cluster 4</h3>
+
+<p><img src="/img/ski_c4.png" alt="4clusters" /></p>
+
+<h3 id="cluster-5">Cluster 5</h3>
+
+<p><img src="/img/ski_c5.png" alt="5clusters" /></p>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fski%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fski%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fski%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Ski%20Resort%20Clusterring%20near%20Montreal - https%3a%2f%2fbyronz.github.io%2fposts%2fski%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fski%2f&title=Ski%20Resort%20Clusterring%20near%20Montreal" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
