@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on 雜</title>
+    <link>https://byronz.github.io/tags/tool/</link>
+    <description>Recent content in Tool on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 03 Jan 2018 11:48:54 -0500</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac Command Line Tools</title>
+      <link>https://byronz.github.io/posts/linux/</link>
+      <pubDate>Wed, 03 Jan 2018 11:48:54 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/linux/</guid>
+      <description>record terminal https://asciinema.org/
+brew install asciinema asciinema rec  mkdir -p Clear python cache files find . | grep -E &amp;quot;(__pycache__|\.pyc|\.pyo$)&amp;quot; | xargs rm -rf
+List binding ports lsof - list open files $ lsof -i -P -n | grep LISTEN SpotifyWe 465 byronzhu 5u IPv4 0xbb818c7dfcdfcc01 0t0 TCP 127.0.0.1:4380 (LISTEN) gotour 1773 byronzhu 3u IPv4 0xbb818c7e15913961 0t0 TCP 127.0.0.1:3999 (LISTEN) epmd 2888 byronzhu 3u IPv4 0xbb818c7dff51dc01 0t0 TCP *:4369 (LISTEN) epmd 2888 byronzhu 4u IPv6 0xbb818c7df2ef6031 0t0 TCP *:4369 (LISTEN) beam.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
 <meta content="Byron ZHU" name="author">
-<meta property="og:title" content="So Binoculars, Refractor or Reflector? - 雜">
-<meta property="og:url" content="https://byronz.github.io/posts/telescope/">
+<meta property="og:title" content="Linux - 雜">
+<meta property="og:url" content="https://byronz.github.io/tags/linux/">
 <meta property="og:description" content="tech blog">
 <meta property="og:type" content="website" />
-<title>So Binoculars, Refractor or Reflector? | 雜</title>
+<title>Linux | 雜</title>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -39,7 +39,6 @@
 
 </head>
 
-<body>
 <section class="section">
   <div class="container">
     <nav class="nav">
@@ -75,68 +74,55 @@
 
 <section class="section">
   <div class="container">
-    <h1 class="title">So Binoculars, Refractor or Reflector?</h1>
-    <h2 class="subtitle is-5">September 28, 2017 by Byron ZHU</h2>
     
-      <div class="tags">
+    <article>
+      <h1 class="title"><a href="https://byronz.github.io/posts/linux/">Mac Command Line Tools</a></h1>
+      <h2 class="subtitle is-5">January 3, 2018</h2>
+      
+        <div class="tags">
     
-        <a class="button is-link" href="/tags/astronomy">astronomy</a>
+        <a class="button is-link" href="/tags/linux">linux</a>
     
-        <a class="button is-link" href="/tags/telescope">telescope</a>
+        <a class="button is-link" href="/tags/tool">tool</a>
+    
+        <a class="button is-link" href="/tags/utilities">utilities</a>
     
 </div>
 
-    
-    <div class="content">
       
-
-<p>I was interested to buy my first telescope, and here are my criteria:</p>
-
-<ul>
-<li>portable - I need to transport it to dark site and don&rsquo;t want to spend 1 hour setup everything in the cold dark</li>
-<li>planertry vs deep dark - this is hard to tell, see moon or saturn will be excited for the first time, but what about the next</li>
-<li>budget - 200$ - 500$</li>
-</ul>
-
-<h1 id="optical-theory">Optical theory</h1>
-
-<h2 id="binoculars">Binoculars</h2>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Binocularp.svg" alt="bincular" /></p>
-
-<p><img src="http://www.canon.ca/inetCAWeb/userfiles/image/CIG/Binoculars/10x30_is_ii_586x186.gif" alt="Canon 10x30is" title="Canon 10x30IS" /></p>
-
-<h2 id="refractor">Refractor</h2>
-
-<p><img src="https://liverpoolas.org/wp-content/uploads/2013/05/Diagram-showing-how-a-refractor-telescope-works.jpg" alt="refractor" /></p>
-
-<p><img src="https://cdn.shopify.com/s/files/1/1935/4371/products/050234210485_PowerSeeker_80EQ_21048_1_570x380@2x.jpg?v=1499292274" alt="Powerseeker 80EQ" /></p>
-
-<h2 id="reflector">Reflector</h2>
-
-<p>Designed by <em>Issac Newton</em> in 18xx to solve one common problem in refractor.</p>
-
-<blockquote>
-<p><strong>NOTE</strong>
-  Keep in mind that you need to calibrate the mirrors from time to time</p>
-</blockquote>
-
-<p><img src="https://liverpoolas.org/wp-content/uploads/2013/05/Diagram-showing-how-a-reflector-telescope-works.jpg" alt="reflector" /></p>
-
-    </div>
-    
-        <div class="nav-left">
-    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2ftelescope%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2ftelescope%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2ftelescope%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://twitter.com/home?status=So%20Binoculars%2c%20Refractor%20or%20Reflector%3f - https%3a%2f%2fbyronz.github.io%2fposts%2ftelescope%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
-    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2ftelescope%2f&title=So%20Binoculars%2c%20Refractor%20or%20Reflector%3f" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
-    
-    </div>
+      <div class="content">
+        record terminal https://asciinema.org/
+brew install asciinema asciinema rec  mkdir -p Clear python cache files find . | grep -E &quot;(__pycache__|\.pyc|\.pyo$)&quot; | xargs rm -rf
+List binding ports lsof - list open files $ lsof -i -P -n | grep LISTEN SpotifyWe 465 byronzhu 5u IPv4 0xbb818c7dfcdfcc01 0t0 TCP 127.0.0.1:4380 (LISTEN) gotour 1773 byronzhu 3u IPv4 0xbb818c7e15913961 0t0 TCP 127.0.0.1:3999 (LISTEN) epmd 2888 byronzhu 3u IPv4 0xbb818c7dff51dc01 0t0 TCP *:4369 (LISTEN) epmd 2888 byronzhu 4u IPv6 0xbb818c7df2ef6031 0t0 TCP *:4369 (LISTEN) beam.
+        
+        ...<a class="button is-link" href="https://byronz.github.io/posts/linux/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
     
   </div>
 </section>
-
+<section class="section">
+  <div class="container">
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          
+        </div>
+      </div>
+      <div class="level-right is-marginless">
+        <div class="level-item">
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
 
 <section class="section">
   <div class="container has-text-centered">
@@ -163,4 +149,3 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-</body>

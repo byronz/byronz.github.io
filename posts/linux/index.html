@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Mac Command Line Tools - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/linux/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Mac Command Line Tools | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+  });
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108552865-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108552865-1');
+</script>
+
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Mac Command Line Tools</h1>
+    <h2 class="subtitle is-5">January 3, 2018 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/linux">linux</a>
+    
+        <a class="button is-link" href="/tags/tool">tool</a>
+    
+        <a class="button is-link" href="/tags/utilities">utilities</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<hr />
+
+<h2 id="record-terminal">record terminal</h2>
+
+<p><a href="https://asciinema.org/">https://asciinema.org/</a></p>
+
+<pre><code>brew install asciinema
+asciinema rec
+
+</code></pre>
+
+<h2 id="mkdir-p">mkdir -p</h2>
+
+<h2 id="clear-python-cache-files">Clear python cache files</h2>
+
+<p><code>find . | grep -E &quot;(__pycache__|\.pyc|\.pyo$)&quot; | xargs rm -rf</code></p>
+
+<h2 id="list-binding-ports">List binding ports</h2>
+
+<h3 id="lsof-list-open-files">lsof - list open files</h3>
+
+<pre><code>$ lsof -i -P -n | grep LISTEN
+SpotifyWe   465 byronzhu    5u  IPv4 0xbb818c7dfcdfcc01      0t0  TCP 127.0.0.1:4380 (LISTEN)
+gotour     1773 byronzhu    3u  IPv4 0xbb818c7e15913961      0t0  TCP 127.0.0.1:3999 (LISTEN)
+epmd       2888 byronzhu    3u  IPv4 0xbb818c7dff51dc01      0t0  TCP *:4369 (LISTEN)
+epmd       2888 byronzhu    4u  IPv6 0xbb818c7df2ef6031      0t0  TCP *:4369 (LISTEN)
+beam.smp   2895 byronzhu   79u  IPv4 0xbb818c7dfce003e1      0t0  TCP *:25672 (LISTEN)
+beam.smp   2895 byronzhu   89u  IPv4 0xbb818c7e00f35c01      0t0  TCP 127.0.0.1:5672 (LISTEN)
+beam.smp   2895 byronzhu   90u  IPv6 0xbb818c7df2ef65f1      0t0  TCP *:1883 (LISTEN)
+beam.smp   2895 byronzhu   91u  IPv6 0xbb818c7df2ef4ef1      0t0  TCP *:61613 (LISTEN)
+beam.smp   2895 byronzhu   92u  IPv4 0xbb818c7dfce01681      0t0  TCP *:15672 (LISTEN)
+hugo      71055 byronzhu   87u  IPv4 0xbb818c7e15913011      0t0  TCP 127.0.0.1:1313 (LISTEN)
+</code></pre>
+
+<h3 id="netstat-show-network-status">netstat - show network status</h3>
+
+<pre><code>$ netstat -an | grep LISTEN
+tcp4       0      0  *.15672                *.*                    LISTEN
+tcp46      0      0  *.61613                *.*                    LISTEN
+tcp46      0      0  *.1883                 *.*                    LISTEN
+tcp4       0      0  127.0.0.1.5672         *.*                    LISTEN
+tcp4       0      0  *.25672                *.*                    LISTEN
+tcp6       0      0  *.4369                 *.*                    LISTEN
+tcp4       0      0  *.4369                 *.*                    LISTEN
+tcp4       0      0  127.0.0.1.1313         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.3999         *.*                    LISTEN
+tcp4       0      0  127.0.0.1.4380         *.*                    LISTEN
+</code></pre>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://explainshell.com/">https://explainshell.com/</a></li>
+</ul>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2flinux%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2flinux%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2flinux%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Mac%20Command%20Line%20Tools - https%3a%2f%2fbyronz.github.io%2fposts%2flinux%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2flinux%2f&title=Mac%20Command%20Line%20Tools" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
