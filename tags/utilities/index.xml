@@ -18,7 +18,7 @@
       <pubDate>Wed, 03 Jan 2018 11:48:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/posts/linux/</guid>
-      <description>record terminal https://asciinema.org/
+      <description>homebrew /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  record terminal https://asciinema.org/
 brew install asciinema asciinema rec  mkdir -p Clear python cache files find . | grep -E &amp;quot;(__pycache__|\.pyc|\.pyo$)&amp;quot; | xargs rm -rf
 List binding ports lsof - list open files $ lsof -i -P -n | grep LISTEN SpotifyWe 465 byronzhu 5u IPv4 0xbb818c7dfcdfcc01 0t0 TCP 127.0.0.1:4380 (LISTEN) gotour 1773 byronzhu 3u IPv4 0xbb818c7e15913961 0t0 TCP 127.0.0.1:3999 (LISTEN) epmd 2888 byronzhu 3u IPv4 0xbb818c7dff51dc01 0t0 TCP *:4369 (LISTEN) epmd 2888 byronzhu 4u IPv6 0xbb818c7df2ef6031 0t0 TCP *:4369 (LISTEN) beam.</description>
     </item>
