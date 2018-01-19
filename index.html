@@ -80,9 +80,7 @@
 
       
       <div class="content">
-        homebrew /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;  record terminal https://asciinema.org/
-brew install asciinema asciinema rec  mkdir -p Clear python cache files find . | grep -E &quot;(__pycache__|\.pyc|\.pyo$)&quot; | xargs rm -rf
-List binding ports lsof - list open files $ lsof -i -P -n | grep LISTEN SpotifyWe 465 byronzhu 5u IPv4 0xbb818c7dfcdfcc01 0t0 TCP 127.0.0.1:4380 (LISTEN) gotour 1773 byronzhu 3u IPv4 0xbb818c7e15913961 0t0 TCP 127.0.0.1:3999 (LISTEN) epmd 2888 byronzhu 3u IPv4 0xbb818c7dff51dc01 0t0 TCP *:4369 (LISTEN) epmd 2888 byronzhu 4u IPv6 0xbb818c7df2ef6031 0t0 TCP *:4369 (LISTEN) beam.
+        oh my zsh alias gr='grep -Rnif /dev/stdin . &lt;&lt;&lt;' alias tri='tree -I &quot;*.pyc|__pycache__&quot;' alias youtube-dl='/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl' alias y2mp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0' # alias for git alias gs=&quot;git status&quot; alias gsv=&quot;git status -v&quot; alias gaa=&quot;git add -A&quot; alias gcm=&quot;git commit -m&quot; alias gk=&quot;git checkout&quot; alias gd='git diff' alias gdc='git diff --cached' &lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&gt; export ANSIBLE_SSH_CONTROL_PATH='/tmp/asb-%%h-%%p-%%r'  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY='±' function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || ref=&quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&gt; /dev/null)&quot; echo &quot;${ref/refs\/heads\// }$(parse_git_dirty)&quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &gt;/dev/null 2&gt;&amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !
         
         ...<a class="button is-link" href="https://byronz.github.io/posts/linux/" style="height:28px">
           Read more
