@@ -31,6 +31,17 @@
     </item>
     
     <item>
+      <title>Ski Resort Clusterring near Montreal</title>
+      <link>https://byronz.github.io/posts/ski/</link>
+      <pubDate>Sat, 18 Nov 2017 23:08:20 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/ski/</guid>
+      <description>Rational My 3rd ski season in montérégie is coming, and this post uses a very basic machine-learning-unsupervised-clusterring algorithm to show an interesting analysis about how to choose your next ski journey.
+Algorithm Quote from wiki page
+ k-means clustering is a method of vector quantization, originally from signal processing, that is popular for cluster analysis in data mining. k-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster.</description>
+    </item>
+    
+    <item>
       <title>換胎 tips</title>
       <link>https://byronz.github.io/posts/tire/</link>
       <pubDate>Tue, 07 Nov 2017 21:40:14 -0500</pubDate>
