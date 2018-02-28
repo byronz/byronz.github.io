@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nosql on 雜</title>
+    <link>https://byronz.github.io/tags/nosql/</link>
+    <description>Recent content in Nosql on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 22 Feb 2018 15:49:36 -0500</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mongo</title>
+      <link>https://byronz.github.io/posts/nosql_mongo/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_mongo/</guid>
+      <description>Replication Set A replica set in MongoDB is a group of mongod processes that maintain the same data set
+A replica set can have only one primary capable of confirming writes with { w: &amp;ldquo;majority&amp;rdquo; } write concern
+election new leader takes about 10-30s before, after v3.2 ~2s
+Shared Cluster https://docs.mongodb.com/manual/tutorial/deploy-shard-cluster/
+ shard: Each shard contains a subset of the sharded data. Each shard can be deployed as a replica set.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra</title>
+      <link>https://byronz.github.io/posts/nosql_cassandra/</link>
+      <pubDate>Wed, 21 Feb 2018 20:07:32 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_cassandra/</guid>
+      <description>Data Model Map&amp;lt;RowKey, SortedMap&amp;lt;ColumnKey, ColumnValue&amp;gt;&amp;gt;
+CREATE KEYSPACE sports WITH REPLICATION = {&#39;class&#39; : &#39;NetworkTopologyStrategy&#39;, &#39;datacenter1&#39; : 2}; # you can tune the r/w consistency level with keyspace Availability versus Consistency CREATE TABLE crossfit_gyms_by_city ( country_code text, state_province text, city text, gym_name text, opening_date timestamp, PRIMARY KEY ((country_code, state_province, city), opening_date, gym_name) ) WITH CLUSTERING ORDER BY ( opening_data ASC, gym_name ASC );     Cassandra RDBMS     Keyspace Database   Column Family Table   Partition Key Primary Key    Partitioner A partitioner determines how data is distributed across the nodes in the cluster (including replicas).</description>
+    </item>
+    
+  </channel>
+</rss>

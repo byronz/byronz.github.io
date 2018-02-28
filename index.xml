@@ -7,10 +7,83 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 03 Jan 2018 11:48:54 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 22 Feb 2018 16:06:02 -0500</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Riak</title>
+      <link>https://byronz.github.io/posts/nosql_riak/</link>
+      <pubDate>Thu, 22 Feb 2018 16:06:02 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_riak/</guid>
+      <description>Riak KV Note: I think the official documentation quality is very poor, a lot of links are 404 and not updated
+Query option  Riak search via Apache Solr Secondary Index Map Reduce  Riak TS CREATE TABLE GeoCheckin ( region VARCHAR NOT NULL, - state VARCHAR NOT NULL, | time TIMESTAMP NOT NULL, | --&amp;gt; Column Definitions weather VARCHAR NOT NULL, | temperature DOUBLE, _ PRIMARY KEY ( (region, state, QUANTUM(time, 15, &#39;m&#39;)), &amp;lt;-- Partition Key =&amp;gt; group data that will be queried together in the same physical part of the cluster region, state, time &amp;lt;-- Local Key =&amp;gt; ) )  Note: Only one quantum function may be specified and it must be the last element of the partition key.</description>
+    </item>
+    
+    <item>
+      <title>Mongo</title>
+      <link>https://byronz.github.io/posts/nosql_mongo/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_mongo/</guid>
+      <description>Replication Set A replica set in MongoDB is a group of mongod processes that maintain the same data set
+A replica set can have only one primary capable of confirming writes with { w: &amp;ldquo;majority&amp;rdquo; } write concern
+election new leader takes about 10-30s before, after v3.2 ~2s
+Shared Cluster https://docs.mongodb.com/manual/tutorial/deploy-shard-cluster/
+ shard: Each shard contains a subset of the sharded data. Each shard can be deployed as a replica set.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra</title>
+      <link>https://byronz.github.io/posts/nosql_cassandra/</link>
+      <pubDate>Wed, 21 Feb 2018 20:07:32 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_cassandra/</guid>
+      <description>Data Model Map&amp;lt;RowKey, SortedMap&amp;lt;ColumnKey, ColumnValue&amp;gt;&amp;gt;
+CREATE KEYSPACE sports WITH REPLICATION = {&#39;class&#39; : &#39;NetworkTopologyStrategy&#39;, &#39;datacenter1&#39; : 2}; # you can tune the r/w consistency level with keyspace Availability versus Consistency CREATE TABLE crossfit_gyms_by_city ( country_code text, state_province text, city text, gym_name text, opening_date timestamp, PRIMARY KEY ((country_code, state_province, city), opening_date, gym_name) ) WITH CLUSTERING ORDER BY ( opening_data ASC, gym_name ASC );     Cassandra RDBMS     Keyspace Database   Column Family Table   Partition Key Primary Key    Partitioner A partitioner determines how data is distributed across the nodes in the cluster (including replicas).</description>
+    </item>
+    
+    <item>
+      <title>Bai XianYong</title>
+      <link>https://byronz.github.io/posts/bai/</link>
+      <pubDate>Mon, 19 Feb 2018 15:33:25 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/bai/</guid>
+      <description>遊園驚夢 白先勇 錢夫人到達臺北近郊天母竇公館的時候，竇公館門前兩旁的汽車已經排滿 了，大多是官家的黑色小轎車，錢夫人坐的計程車開到門口她便命令司</description>
+    </item>
+    
+    <item>
+      <title>Mac Unicode</title>
+      <link>https://byronz.github.io/posts/mac/</link>
+      <pubDate>Thu, 15 Feb 2018 00:43:09 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/mac/</guid>
+      <description>Switch to Unicode Hex Input and Type ⌥ +{unicode val}
+ Tab U+21E5 ⇥ Option U+2325 ⌥ Command U+2318 ⌘ Control U+2303 ⌃ Shift U+21E7 ⇧ Clear U+2327 ⌧ Escape U+238B ⎋  </description>
+    </item>
+    
+    <item>
+      <title>NOSQL DB</title>
+      <link>https://byronz.github.io/posts/tsdb/</link>
+      <pubDate>Fri, 09 Feb 2018 18:59:44 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/tsdb/</guid>
+      <description>Cassandra Cassandra’s data model consists of keyspaces, column families, keys, and columns.
+Data Model Map&amp;lt;RowKey, SortedMap&amp;lt;ColumnKey, ColumnValue&amp;gt;&amp;gt;
+CREATE TABLE crossfit_gyms_by_city ( country_code text, state_province text, city text, gym_name text, opening_date timestamp, PRIMARY KEY ((country_code, state_province, city), opening_date, gym_name) ) WITH CLUSTERING ORDER BY ( opening_data ASC, gym_name ASC );  Partitioner A partitioner determines how data is distributed across the nodes in the cluster (including replicas).
+ Murmur3Partitioner (default): uniformly distributes data across the cluster based on MurmurHash hash values.</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://byronz.github.io/posts/docker/</link>
+      <pubDate>Thu, 18 Jan 2018 22:48:39 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/docker/</guid>
+      <description>Namespaces  CGROUP IPC NET NS (MNT) PID USER UTS  PID $ ps axul | sort -n -k 2 | head -n 10 USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND UID PPID CPU PRI NI WCHAN root 1 0.0 0.1 4372056 12232 ?? Ss 15Jan18 54:02.49 /sbin/launchd 0 0 0 37 0 - root 38 0.0 0.0 4351128 1756 ?? Ss 15Jan18 0:49.25 /usr/sbin/syslog 0 1 0 4 0 - root 39 0.</description>
+    </item>
     
     <item>
       <title>Mac Command Line Tools</title>
@@ -28,6 +101,19 @@
       
       <guid>https://byronz.github.io/posts/go/</guid>
       <description>Doumentation Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets. godoc -http=:8888 offline documentation site godoc fmt Fprintf or godoc builtin append quick terminal check comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code Context Paradigm compiled concurrent imperative structured Authors original - Robert Griesemer</description>
+    </item>
+    
+    <item>
+      <title>Elixir Part I - Playbook</title>
+      <link>https://byronz.github.io/posts/elixir/</link>
+      <pubDate>Thu, 30 Nov 2017 17:55:57 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/elixir/</guid>
+      <description>https://joearms.github.io/published/2013-05-31-a-week-with-elixir.html
+Pattern Matching equal sign = is not an assignment, is a match operator
+^ pin operator forces using existing values
+Immutable iex(13)&amp;gt; l1 = [1,2,3] [1, 2, 3] iex(14)&amp;gt; l2 = [ l1 | &#39;a&#39;] [[1, 2, 3], 97] iex(16)&amp;gt; l2 = [ &#39;a&#39;| l1] [&#39;a&#39;, 1, 2, 3]  Basics Value Types
+iex(23)&amp;gt; 0o3407 1799 iex(24)&amp;gt; 0b111100 60 iex(25)&amp;gt; 0x33ff 13311 iex(28)&amp;gt; :var@2 :var@2 iex(29)&amp;gt; 1..100 1..100 iex&amp;gt; Regex.</description>
     </item>
     
     <item>
@@ -71,6 +157,15 @@ Forward Propagation using trained parameters $\theta_{n}$ we can predict the out
       
       <guid>https://byronz.github.io/posts/test/</guid>
       <description>Release Pipeline Everything starts from a commit, typically for a feature development. This should automatically trigger a build job on our CI server; the unit tests is also included in the job. a. If any automation test needed for the feature, the automation cases can be implemented by tester in parallel. If everything is OK, we can deploy everything in stage, this step is currently manual. Note: the deploying steps</description>
+    </item>
+    
+    <item>
+      <title>詞集</title>
+      <link>https://byronz.github.io/posts/eng/</link>
+      <pubDate>Fri, 13 Oct 2017 11:02:14 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/eng/</guid>
+      <description>tags: [english] stutter demystify vs elaborate  make (a difficult or esoteric subject) clearer and easier to understand. develop or present (a theory, policy, or system) in detail  -ent resilient  (of a person or animal) able to withstand or recover quickly from difficult conditions (of a substance or object) able to recoil or spring back into shape after bending, stretching, or being compressed.  transient lasting only for a short time; impermanent.</description>
     </item>
     
     <item>

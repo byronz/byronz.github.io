@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://byronz.github.io/posts/nosql_riak/</loc>
+    <lastmod>2018-02-22T16:06:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/nosql_mongo/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/nosql_cassandra/</loc>
+    <lastmod>2018-02-21T20:07:32-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/bai/</loc>
+    <lastmod>2018-02-19T15:33:25-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/mac/</loc>
+    <lastmod>2018-02-15T00:43:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/tsdb/</loc>
+    <lastmod>2018-02-09T18:59:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/docker/</loc>
+    <lastmod>2018-01-18T22:48:39-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/posts/linux/</loc>
     <lastmod>2018-01-03T11:48:54-05:00</lastmod>
   </url>
@@ -10,6 +45,11 @@
   <url>
     <loc>https://byronz.github.io/posts/go/</loc>
     <lastmod>2017-12-14T17:45:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/elixir/</loc>
+    <lastmod>2017-11-30T17:55:57-05:00</lastmod>
   </url>
   
   <url>
@@ -30,6 +70,11 @@
   <url>
     <loc>https://byronz.github.io/posts/test/</loc>
     <lastmod>2017-10-14T10:36:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/posts/eng/</loc>
+    <lastmod>2017-10-13T11:02:14-04:00</lastmod>
   </url>
   
   <url>
@@ -81,6 +126,12 @@
   </url>
   
   <url>
+    <loc>https://byronz.github.io/tags/cassandra/</loc>
+    <lastmod>2018-02-21T20:07:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -92,8 +143,56 @@
   </url>
   
   <url>
+    <loc>https://byronz.github.io/tags/cluster/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/column/</loc>
+    <lastmod>2018-02-21T20:07:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/tags/concurrency/</loc>
     <lastmod>2017-12-14T17:45:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/container/</loc>
+    <lastmod>2018-01-18T22:48:39-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/db/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/docker/</loc>
+    <lastmod>2018-01-18T22:48:39-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/document/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/elixir/</loc>
+    <lastmod>2017-11-30T17:55:57-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/erlang/</loc>
+    <lastmod>2017-11-30T17:55:57-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,14 +245,26 @@
   </url>
   
   <url>
+    <loc>https://byronz.github.io/tags/mongo/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/tags/narcos/</loc>
     <lastmod>2017-09-28T17:15:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://byronz.github.io/tags/nosql/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://byronz.github.io/posts/</loc>
-    <lastmod>2018-01-03T11:48:54-05:00</lastmod>
+    <lastmod>2018-02-22T16:06:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -178,6 +289,12 @@
   <url>
     <loc>https://byronz.github.io/tags/security/</loc>
     <lastmod>2017-10-02T10:53:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://byronz.github.io/tags/shard/</loc>
+    <lastmod>2018-02-22T15:49:36-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -249,7 +366,7 @@
   
   <url>
     <loc>https://byronz.github.io/</loc>
-    <lastmod>2018-01-03T11:48:54-05:00</lastmod>
+    <lastmod>2018-02-22T16:06:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   

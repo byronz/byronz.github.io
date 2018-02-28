@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Container on 雜</title>
+    <link>https://byronz.github.io/tags/container/</link>
+    <description>Recent content in Container on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 18 Jan 2018 22:48:39 -0500</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker</title>
+      <link>https://byronz.github.io/posts/docker/</link>
+      <pubDate>Thu, 18 Jan 2018 22:48:39 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/docker/</guid>
+      <description>Namespaces  CGROUP IPC NET NS (MNT) PID USER UTS  PID $ ps axul | sort -n -k 2 | head -n 10 USER PID %CPU %MEM VSZ RSS TT STAT STARTED TIME COMMAND UID PPID CPU PRI NI WCHAN root 1 0.0 0.1 4372056 12232 ?? Ss 15Jan18 54:02.49 /sbin/launchd 0 0 0 37 0 - root 38 0.0 0.0 4351128 1756 ?? Ss 15Jan18 0:49.25 /usr/sbin/syslog 0 1 0 4 0 - root 39 0.</description>
+    </item>
+    
+  </channel>
+</rss>

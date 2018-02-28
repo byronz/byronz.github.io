@@ -40,6 +40,15 @@
     </item>
     
     <item>
+      <title>Cassandra</title>
+      <link>https://byronz.github.io/tags/cassandra/</link>
+      <pubDate>Wed, 21 Feb 2018 20:07:32 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/cassandra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ci</title>
       <link>https://byronz.github.io/tags/ci/</link>
       <pubDate>Sat, 14 Oct 2017 10:36:09 -0400</pubDate>
@@ -49,11 +58,83 @@
     </item>
     
     <item>
+      <title>Cluster</title>
+      <link>https://byronz.github.io/tags/cluster/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Column</title>
+      <link>https://byronz.github.io/tags/column/</link>
+      <pubDate>Wed, 21 Feb 2018 20:07:32 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/column/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Concurrency</title>
       <link>https://byronz.github.io/tags/concurrency/</link>
       <pubDate>Thu, 14 Dec 2017 17:45:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>https://byronz.github.io/tags/container/</link>
+      <pubDate>Thu, 18 Jan 2018 22:48:39 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Db</title>
+      <link>https://byronz.github.io/tags/db/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://byronz.github.io/tags/docker/</link>
+      <pubDate>Thu, 18 Jan 2018 22:48:39 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Document</title>
+      <link>https://byronz.github.io/tags/document/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/document/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elixir</title>
+      <link>https://byronz.github.io/tags/elixir/</link>
+      <pubDate>Thu, 30 Nov 2017 17:55:57 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/elixir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Erlang</title>
+      <link>https://byronz.github.io/tags/erlang/</link>
+      <pubDate>Thu, 30 Nov 2017 17:55:57 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/erlang/</guid>
       <description></description>
     </item>
     
@@ -130,11 +211,29 @@
     </item>
     
     <item>
+      <title>Mongo</title>
+      <link>https://byronz.github.io/tags/mongo/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/mongo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Narcos</title>
       <link>https://byronz.github.io/tags/narcos/</link>
       <pubDate>Thu, 28 Sep 2017 17:15:20 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/narcos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nosql</title>
+      <link>https://byronz.github.io/tags/nosql/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/nosql/</guid>
       <description></description>
     </item>
     
@@ -171,6 +270,15 @@
       <pubDate>Mon, 02 Oct 2017 10:53:53 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shard</title>
+      <link>https://byronz.github.io/tags/shard/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/tags/shard/</guid>
       <description></description>
     </item>
     

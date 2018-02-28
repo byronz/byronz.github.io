@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Mongo - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/nosql_mongo/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Mongo | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Mongo</h1>
+    <h2 class="subtitle is-5">February 22, 2018 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/nosql">nosql</a>
+    
+        <a class="button is-link" href="/tags/document">document</a>
+    
+        <a class="button is-link" href="/tags/mongo">mongo</a>
+    
+        <a class="button is-link" href="/tags/db">db</a>
+    
+        <a class="button is-link" href="/tags/cluster">cluster</a>
+    
+        <a class="button is-link" href="/tags/shard">shard</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<h2 id="replication-set">Replication Set</h2>
+
+<p>A replica set in MongoDB is a group of mongod processes that maintain the same data set</p>
+
+<p><img src="https://docs.mongodb.com/manual/_images/replica-set-read-write-operations-primary.bakedsvg.svg" alt="replication" /></p>
+
+<p>A replica set can have <strong>only one primary</strong> capable of confirming writes with { w: &ldquo;majority&rdquo; } write concern</p>
+
+<p>election new leader takes about 10-30s before, after v3.2 ~2s</p>
+
+<p><img src="https://docs.mongodb.com/manual/_images/replica-set-primary-with-secondary-and-arbiter.bakedsvg.svg" alt="arbiter" /></p>
+
+<h2 id="shared-cluster">Shared Cluster</h2>
+
+<p><a href="https://docs.mongodb.com/manual/tutorial/deploy-shard-cluster/">https://docs.mongodb.com/manual/tutorial/deploy-shard-cluster/</a></p>
+
+<p><img src="https://docs.mongodb.com/manual/_images/sharded-cluster-production-architecture.bakedsvg.svg" alt="cluster" /></p>
+
+<ul>
+<li>shard: Each shard contains a subset of the sharded data. Each shard can be deployed as a replica set.</li>
+<li>mongos: The mongos acts as a query router, providing an interface between client applications and the sharded cluster.</li>
+<li>config servers: Config servers store metadata and configuration settings for the cluster. As of MongoDB 3.4, config servers must be deployed as a replica set (CSRS).</li>
+</ul>
+
+<p><strong>Shard key</strong></p>
+
+<h2 id="ts-model">TS Model</h2>
+
+<p><em>typical document design</em></p>
+
+<pre><code>{
+  timestamp: ISODate(&quot;2013-10-10T23:06:37.000Z&quot;),
+  type: ”memory_used”,
+  value: 1000000
+},
+{
+  timestamp: ISODate(&quot;2013-10-10T23:06:38.000Z&quot;),
+  type: ”memory_used”,
+  value: 15000000
+}
+</code></pre>
+
+<p><em>with ts-oriented</em></p>
+
+<pre><code>{
+  timestamp_minute: ISODate(&quot;2013-10-10T23:06:00.000Z&quot;),
+  type: “memory_used”,
+  values: {
+    0: 999999,
+    …
+    37: 1000000,
+    38: 1500000,
+    … 
+    59: 2000000
+  }
+}
+</code></pre>
+
+<p>MongoDB has in-place update mechanism or built-in operator <code>{ $inc: { pageviews: 1 } }</code></p>
+
+<h2 id="mms">MMS</h2>
+
+<p><a href="https://www.mongodb.com/post/10764757533/announcing-mongodb-monitoring-service-mms">https://www.mongodb.com/post/10764757533/announcing-mongodb-monitoring-service-mms</a></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://www.mongodb.com/blog/post/schema-design-for-time-series-data-in-mongodb">https://www.mongodb.com/blog/post/schema-design-for-time-series-data-in-mongodb</a></li>
+<li><a href="https://docs.mongodb.com/manual/sharding/">https://docs.mongodb.com/manual/sharding/</a></li>
+<li><a href="https://docs.mongodb.com/manual/replication/">https://docs.mongodb.com/manual/replication/</a></li>
+</ul>
+
+<h2 id="comparision">Comparision</h2>
+
+<p><a href="https://scalegrid.io/blog/cassandra-vs-mongodb/">https://scalegrid.io/blog/cassandra-vs-mongodb/</a></p>
+
+<p><a href="https://docs.mongodb.com/manual/core/replica-set-write-concern/">https://docs.mongodb.com/manual/core/replica-set-write-concern/</a></p>
+
+<p><a href="https://stackoverflow.com/questions/2892729/mongodb-vs-cassandra">https://stackoverflow.com/questions/2892729/mongodb-vs-cassandra</a></p>
+
+<pre><code>Both databases perform well on reads where the hot data set fits in memory. Both also emphasize join-less data models (and encourage denormalization instead), and both provide indexes on documents or rows, although MongoDB's indexes are currently more flexible.
+
+Cassandra's storage engine provides constant-time writes no matter how big your data set grows. Writes are more problematic in MongoDB, partly because of the b-tree based storage engine, but more because of the per database write lock.
+
+For analytics, MongoDB provides a custom map/reduce implementation; Cassandra provides native Hadoop support, including for Hive (a SQL data warehouse built on Hadoop map/reduce) and Pig (a Hadoop-specific analysis language that many think is a better fit for map/reduce workloads than SQL).
+
+Not worried about &quot;massive&quot; scalability
+
+If you're looking at a single server, MongoDB is probably a better fit. For those more concerned about scaling, Cassandra's no-single-point-of-failure architecture will be easier to set up and more reliable. (MongoDB's global write lock tends to become more painful, too.) Cassandra also gives a lot more control over how your replication works, including support for multiple data centers.
+
+More concerned about simple setup, maintenance and code
+
+Both are trivial to set up, with reasonable out-of-the-box defaults for a single server. Cassandra is simpler to set up in a multi-server configuration since there are no special-role nodes to worry about; here is a screencast demonstrating setting up a 4-node Cassandra cluster in two minutes.
+
+If you're presently using JSON blobs, MongoDB is an insanely good match for your use case, given that it uses BSON to store the data. You'll be able to have richer and more queryable data than you would in your present database. This would be the most significant win for Mongo.
+</code></pre>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_mongo%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_mongo%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_mongo%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Mongo - https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_mongo%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_mongo%2f&title=Mongo" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>

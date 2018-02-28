@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Cassandra - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/nosql_cassandra/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Cassandra | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Cassandra</h1>
+    <h2 class="subtitle is-5">February 21, 2018 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/nosql">nosql</a>
+    
+        <a class="button is-link" href="/tags/cassandra">cassandra</a>
+    
+        <a class="button is-link" href="/tags/column">column</a>
+    
+        <a class="button is-link" href="/tags/db">db</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<h2 id="data-model">Data Model</h2>
+
+<p><code>Map&lt;RowKey, SortedMap&lt;ColumnKey, ColumnValue&gt;&gt;</code></p>
+
+<p><img src="https://shermandigital.com/img/blog/cassandra-partition.png" alt="row" /></p>
+
+<p><img src="https://pandaforme.gitbooks.io/introduction-to-cassandra/content/Screen%20Shot%202016-02-24%20at%2011.46.09.png" alt="example" /></p>
+
+<pre><code class="language-SQL">CREATE KEYSPACE sports
+    WITH REPLICATION = {'class' : 'NetworkTopologyStrategy', 'datacenter1' : 2};
+
+# you can tune the r/w consistency level with keyspace  Availability versus Consistency
+
+CREATE TABLE crossfit_gyms_by_city (  
+ country_code text,  
+ state_province text,  
+ city text,  
+ gym_name text,  
+ opening_date timestamp,  
+ PRIMARY KEY ((country_code, state_province, city), opening_date, gym_name)  
+) WITH CLUSTERING ORDER BY ( opening_data ASC, gym_name ASC );
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">Cassandra</th>
+<th>RDBMS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Keyspace</td>
+<td>Database</td>
+</tr>
+
+<tr>
+<td align="left">Column Family</td>
+<td>Table</td>
+</tr>
+
+<tr>
+<td align="left">Partition Key</td>
+<td>Primary Key</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="partitioner">Partitioner</h2>
+
+<p>A partitioner determines how data is distributed across the nodes in the cluster (including replicas).</p>
+
+<ul>
+<li>Murmur3Partitioner (default): uniformly distributes data across the cluster based on MurmurHash hash values.</li>
+<li>RandomPartitioner: uniformly distributes data across the cluster based on MD5 hash values.</li>
+<li>ByteOrderedPartitioner: keeps an ordered distribution of data lexically by key bytes</li>
+</ul>
+
+<p><img src="https://pandaforme.gitbooks.io/introduction-to-cassandra/content/Screen%20Shot%202016-02-23%20at%2015.24.40.png" alt="hash" /></p>
+
+<h2 id="r-w">R/W</h2>
+
+<p><img src="https://academy.datastax.com/sites/default/files/read-path.png" alt="Read" /></p>
+
+<p>To satisfy a read, Cassandra must combine results from the active memtable and potentially multiple SSTables. Cassandra processes data at several stages on the read path to discover where the data is stored, starting with the data in the memtable and finishing with SSTables:</p>
+
+<ul>
+<li>Check the memtable</li>
+<li>Check row cache, if enabled</li>
+<li>Checks Bloom filter</li>
+<li>Checks partition key cache, if enabled</li>
+<li>Goes directly to the compression offset map if a partition key is found in the partition key cache, or checks the partition summary if not If the partition summary is checked, then the partition index is accessed</li>
+<li>Locates the data on disk using the compression offset map</li>
+<li>Fetches the data from the SSTable on disk</li>
+</ul>
+
+<p><img src="https://academy.datastax.com/sites/default/files/write-path.png" alt="write" /></p>
+
+<ul>
+<li>Logging data in the commit log</li>
+<li>Writing data to the memtable</li>
+<li>Flushing data from the memtable</li>
+<li>Storing data on disk in SSTables</li>
+</ul>
+
+<h2 id="limits">Limits</h2>
+
+<ul>
+<li>No join or subquery support for aggregation. According to Cassandra’s documentation, this is by design, encouraging denormalization of data into partitions that can be queried efficiently from a single node, rather than gathering data from across the entire cluster.</li>
+<li>Ordering is set at table creation time on a per-partition basis. This avoids clients attempting to sort billions of rows at run time.</li>
+<li>All data for a single partition must fit on disk in a single node in the cluster.</li>
+<li>It’s recommended to keep the number of rows within a partition below 100,000 items and the disk size under 100 MB.</li>
+<li>A single column value is limited to 2 GB (1 MB is recommended).</li>
+</ul>
+
+<h2 id="connect">Connect</h2>
+
+<pre><code class="language-python">from cassandra.cluster import Cluster
+from cassandra.auth import PlainTextAuthProvider
+auth_provider = PlainTextAuthProvider(
+        username='cassandra', password='cassandra')
+cluster = Cluster(auth_provider=auth_provider)
+session = cluster.connect()
+session.execute(&quot;Your CQL&quot;)
+</code></pre>
+
+<h2 id="docker-cluster">Docker Cluster</h2>
+
+<p>docker-composer.yaml</p>
+
+<pre><code># Please note we are using Docker Compose version 3
+version: '3'
+    services:
+    # Configuration for our seed cassandra node. The node is call DC1N1
+    # .i.e Node 1 in Data center 1.
+    DC1N1:
+        # Cassandra image for Cassandra version 3.1.0. This is pulled
+        # from the docker store.
+        image: cassandra:3.11
+        # In case this is the first time starting up cassandra we need to ensure
+        # that all nodes do not start up at the same time. Cassandra has a
+        # 2 minute rule i.e. 2 minutes between each node boot up. Booting up
+        # nodes simultaneously is a mistake. This only needs to happen the firt
+        # time we bootup. Configuration below assumes if the Cassandra data
+        # directory is empty it means that we are starting up for the first
+        # time.
+        command: bash -c 'if [ -z &quot;$$(ls -A /var/lib/cassandra/)&quot; ] ; then sleep 0; fi &amp;&amp; /docker-entrypoint.sh cassandra -f'
+        # Network for the nodes to communicate
+        networks:
+            - dc1ring
+        ports:
+            - &quot;9041:9042&quot;                        
+        # Maps cassandra data to a local folder. This preserves data across
+        # container restarts. Note a folder n1data get created locally
+        volumes:
+            - ./n1data:/var/lib/cassandra
+        # Docker constainer environment variable. We are using the
+        # CASSANDRA_CLUSTER_NAME to name the cluster. This needs to be the same
+        # across clusters. We are also declaring that DC1N1 is a seed node.
+        environment:
+            - CASSANDRA_CLUSTER_NAME=dev_cluster
+            - CASSANDRA_SEEDS=DC1N1
+        # Exposing ports for inter cluste communication
+        expose:
+            - 7000
+            - 7001
+            - 7199
+            - 9042
+            - 9160
+        # Cassandra ulimt recommended settings
+        ulimits:
+            memlock: -1
+            nproc: 32768
+            nofile: 100000
+    # This is configuration for our non seed cassandra node. The node is call
+    # DC1N1 .i.e Node 2 in Data center 1.
+    DC1N2:
+        # Cassandra image for Cassandra version 3.1.0. This is pulled
+        # from the docker store.
+        image: cassandra:3.11
+        # In case this is the first time starting up cassandra we need to ensure
+        # that all nodes do not start up at the same time. Cassandra has a
+        # 2 minute rule i.e. 2 minutes between each node boot up. Booting up
+        # nodes simultaneously is a mistake. This only needs to happen the firt
+        # time we bootup. Configuration below assumes if the Cassandra data
+        # directory is empty it means that we are starting up for the first
+        # time.
+        command: bash -c 'if [ -z &quot;$$(ls -A /var/lib/cassandra/)&quot; ] ; then sleep 60; fi &amp;&amp; /docker-entrypoint.sh cassandra -f'
+        # Network for the nodes to communicate
+        networks:
+            - dc1ring
+        ports:
+            - &quot;9042:9042&quot;                        
+        # Maps cassandra data to a local folder. This preserves data across
+        # container restarts. Note a folder n1data get created locally
+        volumes:
+            - ./n2data:/var/lib/cassandra
+        # Docker constainer environment variable. We are using the
+        # CASSANDRA_CLUSTER_NAME to name the cluster. This needs to be the same
+        # across clusters. We are also declaring that DC1N1 is a seed node.
+        environment:
+            - CASSANDRA_CLUSTER_NAME=dev_cluster
+            - CASSANDRA_SEEDS=DC1N1
+        # Since DC1N1 is the seed node
+        depends_on:
+              - DC1N1
+        # Exposing ports for inter cluste communication. Note this is already
+        # done by the docker file. Just being explict about it.
+        expose:
+            # Intra-node communication
+            - 7000
+            # TLS intra-node communication
+            - 7001
+            # JMX
+            - 7199
+            # CQL
+            - 9042
+            # Thrift service
+            - 9160
+        # Cassandra ulimt recommended settings
+        ulimits:
+            memlock: -1
+            nproc: 32768
+            nofile: 100000
+
+    # This is configuration for our non seed cassandra node. The node is call
+    # DC1N3 .i.e Node 3 in Data center 1.
+    DC1N3:
+        image: cassandra:3.11
+        # In case this is the first time starting up cassandra we need to ensure
+        # that all nodes do not start up at the same time. Cassandra has a
+        # 2 minute rule i.e. 2 minutes between each node boot up. Booting up
+        # nodes simultaneously is a mistake. This only needs to happen the firt
+        # time we bootup. Configuration below assumes if the Cassandra data
+        # directory is empty it means that we are starting up for the first
+        # time.
+        command: bash -c 'if [ -z &quot;$$(ls -A /var/lib/cassandra/)&quot; ] ; then sleep 120; fi &amp;&amp; /docker-entrypoint.sh cassandra -f'
+        # Network for the nodes to communicate. This is pulled from docker hub.
+        ports:
+            - &quot;9043:9042&quot;            
+        networks:
+            - dc1ring
+        # Maps cassandra data to a local folder. This preserves data across
+        # container restarts. Note a folder n1data get created locally
+        volumes:
+            - ./n3data:/var/lib/cassandra
+        # Docker constainer environment variable. We are using the
+        # CASSANDRA_CLUSTER_NAME to name the cluster. This needs to be the same
+        # across clusters. We are also declaring that DC1N1 is a seed node.
+        environment:
+            - CASSANDRA_CLUSTER_NAME= dev_cluster
+            - CASSANDRA_SEEDS=DC1N1
+        # Since DC1N1 is the seed node
+        depends_on:
+              - DC1N1
+        # Exposing ports for inter cluste communication. Note this is already
+        # done by the docker file. Just being explict about it.
+        expose:
+            # Intra-node communication
+            - 7000
+            # TLS intra-node communication
+            - 7001
+            # JMX
+            - 7199
+            # CQL
+            - 9042
+            # Thrift service
+            - 9160
+        # Cassandra ulimt recommended settings
+        ulimits:
+            memlock: -1
+            nproc: 32768
+            nofile: 100000
+    # A web based interface for managing your docker containers.
+    portainer:
+        image: portainer/portainer
+        command: --templates http://templates/templates.json
+        networks:
+            - dc1ring
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./portainer-data:/data
+        # Enable you to access potainers web interface from your host machine
+        # using http://localhost:10001
+        ports:
+            - &quot;10001:9000&quot;
+networks:
+    dc1ring:
+
+
+</code></pre>
+
+<h3 id="records">Records</h3>
+
+<p>cluster logs and folder structure
+<a href="https://asciinema.org/a/nemZPToq1rZNKXt57LbhqBidb"><img src="https://asciinema.org/a/nemZPToq1rZNKXt57LbhqBidb.png" alt="asciicast" /></a></p>
+
+<p>connect to cassandra using python driver
+<a href="https://asciinema.org/a/QSrgG1SQFcRFhrCUowag7lENt"><img src="https://asciinema.org/a/QSrgG1SQFcRFhrCUowag7lENt.png" alt="asciicast" /></a></p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://shermandigital.com/blog/designing-a-cassandra-data-model/">https://shermandigital.com/blog/designing-a-cassandra-data-model/</a></li>
+<li><a href="http://abiasforaction.net/apache-cassandra-cluster-docker/">http://abiasforaction.net/apache-cassandra-cluster-docker/</a></li>
+<li><a href="http://abiasforaction.net/a-practical-introduction-to-cassandra-query-language/">http://abiasforaction.net/a-practical-introduction-to-cassandra-query-language/</a></li>
+<li><a href="https://hub.docker.com/_/cassandra/">https://hub.docker.com/_/cassandra/</a></li>
+<li><a href="https://academy.datastax.com/resources/getting-started-time-series-data-modeling">https://academy.datastax.com/resources/getting-started-time-series-data-modeling</a></li>
+<li><a href="https://academy.datastax.com/resources/getting-started-time-series-data-modeling">https://academy.datastax.com/resources/getting-started-time-series-data-modeling</a></li>
+<li><a href="https://pandaforme.gitbooks.io/introduction-to-cassandra/content/understand_the_cassandra_data_model.html">https://pandaforme.gitbooks.io/introduction-to-cassandra/content/understand_the_cassandra_data_model.html</a></li>
+</ul>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_cassandra%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_cassandra%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_cassandra%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Cassandra - https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_cassandra%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_cassandra%2f&title=Cassandra" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>

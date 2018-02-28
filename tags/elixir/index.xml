@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elixir on 雜</title>
+    <link>https://byronz.github.io/tags/elixir/</link>
+    <description>Recent content in Elixir on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 30 Nov 2017 17:55:57 -0500</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/elixir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elixir Part I - Playbook</title>
+      <link>https://byronz.github.io/posts/elixir/</link>
+      <pubDate>Thu, 30 Nov 2017 17:55:57 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/elixir/</guid>
+      <description>https://joearms.github.io/published/2013-05-31-a-week-with-elixir.html
+Pattern Matching equal sign = is not an assignment, is a match operator
+^ pin operator forces using existing values
+Immutable iex(13)&amp;gt; l1 = [1,2,3] [1, 2, 3] iex(14)&amp;gt; l2 = [ l1 | &#39;a&#39;] [[1, 2, 3], 97] iex(16)&amp;gt; l2 = [ &#39;a&#39;| l1] [&#39;a&#39;, 1, 2, 3]  Basics Value Types
+iex(23)&amp;gt; 0o3407 1799 iex(24)&amp;gt; 0b111100 60 iex(25)&amp;gt; 0x33ff 13311 iex(28)&amp;gt; :var@2 :var@2 iex(29)&amp;gt; 1..100 1..100 iex&amp;gt; Regex.</description>
+    </item>
+    
+  </channel>
+</rss>

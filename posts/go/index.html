@@ -166,8 +166,8 @@ func Pic(dx, dy int) [][]uint8 {
 
 <h2 id="strings">strings</h2>
 
-<p>&rdquo;&rdquo; is string
-&ldquo; is a character or char, but it&rsquo;s not 8-bit ascii</p>
+<p><code>&quot;&quot;</code> is string
+<code>''</code> is a character or char, but it&rsquo;s not 8-bit ascii</p>
 
 <p>in <strong>go</strong>, the word <strong>rune</strong> is used</p>
 
@@ -180,7 +180,7 @@ func Pic(dx, dy int) [][]uint8 {
 </blockquote>
 
 <pre><code class="language-go">for pos, char := range &quot;Gő!汉字熱&quot; {
-    fmt.Printf(&quot;character '%c' starts at byte position %d\n&quot;, char, p汉字熱os汉字熱)
+    fmt.Printf(&quot;character '%c' starts at byte position %d\n&quot;, char, pos)
 }
 //character 'G' [type =&gt; 0] starts at byte position int32
 //character 'ő' [type =&gt; 1] starts at byte position int32

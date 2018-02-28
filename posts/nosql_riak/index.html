@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Riak - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/nosql_riak/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Riak | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Riak</h1>
+    <h2 class="subtitle is-5">February 22, 2018 by Byron ZHU</h2>
+    
+    <div class="content">
+      
+
+<h2 id="riak-kv">Riak KV</h2>
+
+<p>Note: <em>I think the official documentation quality is very poor, a lot of links are 404 and not updated</em></p>
+
+<h3 id="query-option">Query option</h3>
+
+<ul>
+<li>Riak search via Apache Solr</li>
+<li>Secondary Index</li>
+<li>Map Reduce</li>
+</ul>
+
+<h2 id="riak-ts">Riak TS</h2>
+
+<pre><code class="language-SQL">CREATE TABLE GeoCheckin
+(
+   region      VARCHAR   NOT NULL,                   -
+   state       VARCHAR   NOT NULL,                    |
+   time        TIMESTAMP NOT NULL,                    |  --&gt; Column Definitions
+   weather     VARCHAR   NOT NULL,                    |
+   temperature DOUBLE,                               _
+   PRIMARY KEY (
+     (region, state, QUANTUM(time, 15, 'm')),        &lt;-- Partition Key =&gt; group data that will be queried together in the same physical part of the cluster
+     region, state, time                             &lt;-- Local Key =&gt;  
+   )
+)
+</code></pre>
+
+<pre><code>Note:  Only one quantum function may be specified and it must be the last element of the partition key.
+</code></pre>
+
+<h3 id="cluster">Cluster</h3>
+
+<p><img src="/img/riak.png" alt="admin" /></p>
+
+<pre><code class="language-yml">version: &quot;2&quot;
+services:
+  coordinator:
+    image: basho/riak-ts
+    ports:
+      - &quot;8087:8087&quot;
+      - &quot;8098:8098&quot;
+    environment:
+      - CLUSTER_NAME=riakts
+    labels:
+      - &quot;com.basho.riak.cluster.name=riakts&quot;
+    volumes:
+      - schemas:/etc/riak/schemas
+  member:
+    image: basho/riak-ts
+    ports:
+      - &quot;8087&quot;
+      - &quot;8098&quot;
+    labels:
+      - &quot;com.basho.riak.cluster.name=riakts&quot;
+    links:
+      - coordinator
+    depends_on:
+      - coordinator
+    environment:
+      - CLUSTER_NAME=riakts
+      - COORDINATOR_NODE=coordinator
+
+volumes:
+  schemas:
+    external: false
+</code></pre>
+
+<p><code>docker-compose scale member=4</code></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://hub.docker.com/r/basho/riak-ts/">https://hub.docker.com/r/basho/riak-ts/</a></li>
+</ul>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_riak%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_riak%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_riak%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Riak - https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_riak%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2fnosql_riak%2f&title=Riak" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>

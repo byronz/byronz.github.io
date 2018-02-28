@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Column on 雜</title>
+    <link>https://byronz.github.io/tags/column/</link>
+    <description>Recent content in Column on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 21 Feb 2018 20:07:32 -0500</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/column/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cassandra</title>
+      <link>https://byronz.github.io/posts/nosql_cassandra/</link>
+      <pubDate>Wed, 21 Feb 2018 20:07:32 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_cassandra/</guid>
+      <description>Data Model Map&amp;lt;RowKey, SortedMap&amp;lt;ColumnKey, ColumnValue&amp;gt;&amp;gt;
+CREATE KEYSPACE sports WITH REPLICATION = {&#39;class&#39; : &#39;NetworkTopologyStrategy&#39;, &#39;datacenter1&#39; : 2}; # you can tune the r/w consistency level with keyspace Availability versus Consistency CREATE TABLE crossfit_gyms_by_city ( country_code text, state_province text, city text, gym_name text, opening_date timestamp, PRIMARY KEY ((country_code, state_province, city), opening_date, gym_name) ) WITH CLUSTERING ORDER BY ( opening_data ASC, gym_name ASC );     Cassandra RDBMS     Keyspace Database   Column Family Table   Partition Key Primary Key    Partitioner A partitioner determines how data is distributed across the nodes in the cluster (including replicas).</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shard on 雜</title>
+    <link>https://byronz.github.io/tags/shard/</link>
+    <description>Recent content in Shard on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 22 Feb 2018 15:49:36 -0500</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/shard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mongo</title>
+      <link>https://byronz.github.io/posts/nosql_mongo/</link>
+      <pubDate>Thu, 22 Feb 2018 15:49:36 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/nosql_mongo/</guid>
+      <description>Replication Set A replica set in MongoDB is a group of mongod processes that maintain the same data set
+A replica set can have only one primary capable of confirming writes with { w: &amp;ldquo;majority&amp;rdquo; } write concern
+election new leader takes about 10-30s before, after v3.2 ~2s
+Shared Cluster https://docs.mongodb.com/manual/tutorial/deploy-shard-cluster/
+ shard: Each shard contains a subset of the sharded data. Each shard can be deployed as a replica set.</description>
+    </item>
+    
+  </channel>
+</rss>

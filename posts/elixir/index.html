@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Elixir Part I - Playbook - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/elixir/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Elixir Part I - Playbook | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Elixir Part I - Playbook</h1>
+    <h2 class="subtitle is-5">November 30, 2017 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/programming">programming</a>
+    
+        <a class="button is-link" href="/tags/elixir">elixir</a>
+    
+        <a class="button is-link" href="/tags/erlang">erlang</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<hr />
+
+<p><a href="https://joearms.github.io/published/2013-05-31-a-week-with-elixir.html">https://joearms.github.io/published/2013-05-31-a-week-with-elixir.html</a></p>
+
+<h1 id="pattern-matching">Pattern Matching</h1>
+
+<p>equal sign = is not an assignment, is a <strong>match operator</strong></p>
+
+<p>^ <strong>pin operator</strong>  forces using existing values</p>
+
+<h1 id="immutable">Immutable</h1>
+
+<pre><code class="language-elixir">iex(13)&gt; l1 = [1,2,3]
+[1, 2, 3]
+iex(14)&gt; l2 = [ l1 | 'a']
+[[1, 2, 3], 97]
+iex(16)&gt; l2 = [ 'a'| l1]
+['a', 1, 2, 3]
+</code></pre>
+
+<h1 id="basics">Basics</h1>
+
+<p>Value Types</p>
+
+<pre><code class="language-elixir">iex(23)&gt; 0o3407
+1799
+iex(24)&gt; 0b111100
+60
+iex(25)&gt; 0x33ff
+13311
+iex(28)&gt; :var@2
+:var@2
+iex(29)&gt; 1..100
+1..100
+iex&gt; Regex.run ~r{[aeiou]}, &quot;caterpillar&quot;
+[&quot;a&quot;]
+iex&gt; Regex.scan ~r{[aeiou]}, &quot;caterpillar&quot;
+[[&quot;a&quot;], [&quot;e&quot;], [&quot;i&quot;], [&quot;a&quot;]]
+</code></pre>
+
+<p>System Types</p>
+
+<pre><code class="language-elixir">iex(31)&gt; self
+#PID&lt;0.84.0&gt;
+iex(32)&gt; make_ref
+#Reference&lt;0.2792161163.4208984065.108413&gt;
+</code></pre>
+
+<p>Collection Types</p>
+
+<pre><code class="language-elixir">#tuple
+iex(34)&gt; {3,3,44,'adada',&quot;adada&quot;, :adad, 33.33, 1..20}
+{3, 3, 44, 'adada', &quot;adada&quot;, :adad, 33.33, 1..20}
+# typical funcition call
+iex(38)&gt; {status, file} = File.open('load.jmx')
+{:ok, #PID&lt;0.142.0&gt;}
+# list (lisp-like)
+
+iex(40)&gt; [1,2]++[3,4]
+[1, 2, 3, 4]
+iex(41)&gt; [1,3,4]--[1,]
+[3, 4]
+iex(43)&gt; 2 in [3,4]
+false
+
+# keyword list
+iex(46)&gt; [1,name: &quot;Dave&quot;, city: &quot;Dallas&quot;, likes: &quot;Programming&quot;]
+[1, {:name, &quot;Dave&quot;}, {:city, &quot;Dallas&quot;}, {:likes, &quot;Programming&quot;}]
+iex(47)&gt; {1, fred: 1, dave: 2}
+{1, [fred: 1, dave: 2]}
+</code></pre>
+
+<p>Maps</p>
+
+<pre><code class="language-elixir">iex(48)&gt; states = %{ &quot;AL&quot; =&gt; &quot;Alabama&quot;, &quot;WI&quot; =&gt; &quot;Wisconsin&quot; }
+%{&quot;AL&quot; =&gt; &quot;Alabama&quot;, &quot;WI&quot; =&gt; &quot;Wisconsin&quot;}
+
+iex(50)&gt; colors = %{ red: 0xff0000, green: 0x00ff00, blue: 0x0000ff }
+%{blue: 255, green: 65280, red: 16711680}
+iex(51)&gt; colors['red']
+nil
+iex(52)&gt; colors[&quot;red&quot;]
+nil
+iex(53)&gt; colors[:red]
+16711680
+iex(54)&gt; colors.red
+16711680
+iex(55)&gt; colors.black
+** (KeyError) key :black not found in: %{blue: 255, green: 65280, red: 16711680}
+</code></pre>
+
+<p>Binaries</p>
+
+<pre><code class="language-elixir">iex(64)&gt; bin = &lt;&lt;3 :: size(2), 5 :: size(4), 1 :: size(2)&gt;&gt;
+&lt;&lt;213&gt;&gt;
+iex(58)&gt; :io.format(&quot;~-8.2b~n&quot;, :binary.bin_to_list bin)
+11010101
+:ok
+iex(63)&gt; 0b11010101
+213
+</code></pre>
+
+<p>Dates &amp; Times</p>
+
+<pre><code class="language-elixir">iex(65)&gt; d1 = Date.new(2016, 12, 25)
+{:ok, ~D[2016-12-25]}
+iex(76)&gt; t1 = Time.new(12, 34, 56)
+{:ok, ~T[12:34:56]}
+</code></pre>
+
+<p>Operators</p>
+
+<pre><code class="language-elixir">iex(100)&gt; div(3,1)
+3
+iex(101)&gt; 3/1
+3.0
+
+iex(108)&gt; [1,3,4] -- [2,1]
+[3, 4]
+iex(109)&gt; [1,3,4] ++ [2,1]
+[1, 3, 4, 2, 1]
+</code></pre>
+
+<h1 id="anonymous-functions">Anonymous Functions</h1>
+
+<pre><code class="language-elixir">iex(1)&gt; sum = fn (a,b) -&gt; a+b end
+#Function&lt;12.99386804/2 in :erl_eval.expr/5&gt;
+iex(2)&gt; sum.(1,2)
+3
+
+iex(3)&gt; o99 = fn -&gt; 99 end
+#Function&lt;20.99386804/0 in :erl_eval.expr/5&gt;
+iex(4)&gt; o99.()
+99
+
+iex(6)&gt; greet = fn msg -&gt; IO.puts msg end
+#Function&lt;6.99386804/1 in :erl_eval.expr/5&gt;
+iex(10)&gt; greet.([80, 77])
+PM
+:ok
+</code></pre>
+
+<p>function is first class</p>
+
+<p>&amp; notation</p>
+
+<pre><code class="language-elixir">iex(32)&gt; add_one = &amp;(&amp;1+1)
+#Function&lt;6.99386804/1 in :erl_eval.expr/5&gt;
+iex(33)&gt; add_one.(2)
+3
+
+iex(36)&gt; speak = &amp;(IO.puts &amp;1)
+&amp;IO.puts/1
+# elixir figures out it's a direct wrapper of built in call, so it associate the anonymous func directly
+
+iex(40)&gt; Enum.map [1,2,3,4], &amp;(&amp;1 + 1)
+[2, 3, 4, 5]
+
+iex(44)&gt; Enum.each [1,3,4,5], &amp; IO.inspect &amp;1
+1
+3
+4
+5
+:ok
+iex(45)&gt; Enum.each [1,3,4,5], &amp;IO.inspect/1
+1
+3
+4
+5
+:ok
+</code></pre>
+
+<h1 id="modules-and-functions">Modules and Functions</h1>
+
+<p>do&hellip;end is syntactic sugar for do: ()</p>
+
+<pre><code class="language-elixir"># it's common pattern in elixir
+
+defmodule Maths do
+  def sum(0), do: 0
+  def sum(n), do: n + sum(n-1)
+
+  def gcd(x, 0), do: x
+  def gcd(x, y), do: gcd(y, rem(x, y))
+
+  def fact(0), do: 1
+  def fact(n) when n &gt; 0, do: n * fact(n-1)
+end
+
+
+</code></pre>
+
+<p>default parameter <code>param \\ val</code></p>
+
+<p>defp is private function</p>
+
+<p>Pipe operator <code>|&gt;</code></p>
+
+<pre><code class="language-elixir">iex(10)&gt; (1..25) |&gt; Enum.map(&amp;(&amp;1*&amp;1)) |&gt; Enum.filter(&amp;(rem(&amp;1, 2) == 0))
+[4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576]
+
+</code></pre>
+
+<p>Module Directives</p>
+
+<ul>
+<li>import Module [, only: | except: ]</li>
+<li>alias My.Import.Module.{Parser, Runner}</li>
+<li>require for marcros</li>
+</ul>
+
+<p>Module Attributes</p>
+
+<pre><code class="language-Elixir">@author &quot;dave&quot;
+def get_author do
+  @author
+end
+</code></pre>
+
+<h1 id="operators">Operators</h1>
+
+<ul>
+<li>list <code>++</code> and <code>--</code></li>
+<li>string <code>&lt;&gt;</code></li>
+<li>boolean <code>and or not</code></li>
+</ul>
+
+<h1 id="list-and-recursion">List and Recursion</h1>
+
+<pre><code class="language-elixir"># head and tail with recursion
+iex(26)&gt; [1 | [2 | [3 | []]]]
+[1, 2, 3]
+
+# pattern match
+iex(29)&gt; [head | [2,3]] = [1,2,3]
+[1, 2, 3]
+iex(30)&gt; [head | [3]] = [1,2,3]
+** (MatchError) no match of right hand side value: [1, 2, 3]
+
+# count lenght
+defmodule Listxx do
+  def len([]), do: 0
+  def len([_ | tail]), do: 1 + len(tail)
+end
+
+</code></pre>
+
+<h1 id="map-keyword-lists-sets-and-structs">Map, Keyword lists, Sets and Structs</h1>
+
+<p>Keyword</p>
+
+<ul>
+<li>keys must be atoms</li>
+<li>keys are ordered</li>
+<li>keys can be redundant</li>
+</ul>
+
+<pre><code class="language-elixir">iex(63)&gt; if 0, do: :this, else: :that
+:this
+iex(64)&gt; if false, do: :this, else: :that
+:that
+# this can be considered the `if` function using keyword list as parameters
+</code></pre>
+
+<p>Map</p>
+
+<pre><code class="language-elixir">
+iex(88)&gt; map = %{:a =&gt; 1, 2 =&gt; :b}
+%{2 =&gt; :b, :a =&gt; 1}
+# map update using pipe
+iex(89)&gt; %{map | 2 =&gt; &quot;two&quot;}
+%{2 =&gt; &quot;two&quot;, :a =&gt; 1}
+</code></pre>
+
+<p>Struct</p>
+
+<pre><code class="language-elixir">defmodule Ski do
+  defstruct name: &quot;&quot;, distance: 0, eclaire: false, vertical: 0
+end
+
+iex(97)&gt; bromont = %Ski{name: &quot;Ski Bromont&quot;, distance: 100}
+%Ski{distance: 100, eclaire: false, name: &quot;Ski Bromont&quot;, vertical: 0}
+iex(98)&gt; bromont.name
+&quot;Ski Bromont&quot;
+iex(99)&gt; bromont.distance
+100
+iex(100)&gt; orford = %{bromont | name: &quot;Orford&quot;,  distance: 110, eclaire: true}
+%Ski{distance: 110, eclaire: true, name: &quot;Orford&quot;, vertical: 0}
+</code></pre>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2felixir%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2felixir%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2felixir%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Elixir%20Part%20I%20-%20Playbook - https%3a%2f%2fbyronz.github.io%2fposts%2felixir%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2felixir%2f&title=Elixir%20Part%20I%20-%20Playbook" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
