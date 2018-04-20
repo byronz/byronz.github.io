@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
 <meta content="Byron ZHU" name="author">
-<meta property="og:title" content="Linux - 雜">
-<meta property="og:url" content="https://byronz.github.io/tags/linux/">
+<meta property="og:title" content="Tech_tips - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/tech_tips/">
 <meta property="og:description" content="tech blog">
 <meta property="og:type" content="website" />
-<title>Linux | 雜</title>
+<title>Tech_tips | 雜</title>
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -27,6 +27,7 @@
 
 </head>
 
+<body>
 <section class="section">
   <div class="container">
     <nav class="nav">
@@ -62,53 +63,30 @@
 
 <section class="section">
   <div class="container">
+    <h1 class="title">Tech_tips</h1>
+    <h2 class="subtitle is-5">April 20, 2018 by Byron ZHU</h2>
     
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/linux/">Mac Command Line Tools</a></h1>
-      <h2 class="subtitle is-5">January 3, 2018</h2>
+    <div class="content">
       
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/linux">linux</a>
-    
-        <a class="button is-link" href="/tags/tool">tool</a>
-    
-        <a class="button is-link" href="/tags/utilities">utilities</a>
-    
-</div>
 
-      
-      <div class="content">
-        oh my zsh alias gr='grep -Rnif /dev/stdin . &lt;&lt;&lt;' alias tri='tree -I &quot;*.pyc|__pycache__&quot;' alias youtube-dl='/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl' alias y2mp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0' # alias for git alias gs=&quot;git status&quot; alias gsv=&quot;git status -v&quot; alias gaa=&quot;git add -A&quot; alias gcm=&quot;git commit -m&quot; alias gk=&quot;git checkout&quot; alias gd='git diff' alias gdc='git diff --cached' &lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&gt; export ANSIBLE_SSH_CONTROL_PATH='/tmp/asb-%%h-%%p-%%r'  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY='±' function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || ref=&quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&gt; /dev/null)&quot; echo &quot;${ref/refs\/heads\// }$(parse_git_dirty)&quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &gt;/dev/null 2&gt;&amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/linux/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
+<h2 id="mongo-console-pretty">Mongo console pretty</h2>
+
+<p><code>echo DBQuery.prototype._prettyShell = true &gt;&gt; ~/.mongorc.js</code></p>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2ftech_tips%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2ftech_tips%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2ftech_tips%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Tech_tips - https%3a%2f%2fbyronz.github.io%2fposts%2ftech_tips%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2ftech_tips%2f&title=Tech_tips" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
     
   </div>
 </section>
-<section class="section">
-  <div class="container">
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-          
-        </div>
-      </div>
-      <div class="level-right is-marginless">
-        <div class="level-item">
-          
-        </div>
-      </div>
-    </nav>
-  </div>
-</section>
+
 
 <section class="section">
   <div class="container has-text-centered">
@@ -146,3 +124,4 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 
+</body>

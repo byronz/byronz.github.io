@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 22 Feb 2018 16:06:02 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 17:39:15 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tech_tips</title>
+      <link>https://byronz.github.io/posts/tech_tips/</link>
+      <pubDate>Fri, 20 Apr 2018 17:39:15 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/tech_tips/</guid>
+      <description>Mongo console pretty echo DBQuery.prototype._prettyShell = true &amp;gt;&amp;gt; ~/.mongorc.js</description>
+    </item>
     
     <item>
       <title>Riak</title>
@@ -100,7 +109,7 @@ CREATE TABLE crossfit_gyms_by_city ( country_code text, state_province text, cit
       <pubDate>Thu, 14 Dec 2017 17:45:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/posts/go/</guid>
-      <description>Doumentation Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets. godoc -http=:8888 offline documentation site godoc fmt Fprintf or godoc builtin append quick terminal check comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code Context Paradigm compiled concurrent imperative structured Authors original - Robert Griesemer</description>
+      <description>Doumentation Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets. godoc -http=:8888 offline documentation site godoc fmt Fprintf or godoc builtin append quick terminal check comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code Basics Static Types (Built In) builtin pkg bool string int int8</description>
     </item>
     
     <item>

@@ -18,7 +18,7 @@
       <pubDate>Thu, 14 Dec 2017 17:45:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/posts/go/</guid>
-      <description>Doumentation Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets. godoc -http=:8888 offline documentation site godoc fmt Fprintf or godoc builtin append quick terminal check comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code Context Paradigm compiled concurrent imperative structured Authors original - Robert Griesemer</description>
+      <description>Doumentation Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets. godoc -http=:8888 offline documentation site godoc fmt Fprintf or godoc builtin append quick terminal check comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code Basics Static Types (Built In) builtin pkg bool string int int8</description>
     </item>
     
     <item>

@@ -80,7 +80,9 @@
     <div class="content">
       
 
-<h1 id="doumentation">Doumentation</h1>
+<hr />
+
+<h3 id="doumentation">Doumentation</h3>
 
 <p>Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets.</p>
 
@@ -90,64 +92,142 @@
 <li>comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code</li>
 </ol>
 
-<h1 id="context">Context</h1>
+<h1 id="basics">Basics</h1>
 
-<h2 id="paradigm">Paradigm</h2>
+<h2 id="static-types-built-in">Static Types (Built In)</h2>
 
-<ul>
-<li>compiled</li>
-<li>concurrent</li>
-<li>imperative</li>
-<li>structured</li>
-</ul>
+<p><a href="https://golang.org/pkg/builtin">builtin</a> pkg</p>
 
-<h2 id="authors">Authors</h2>
+<pre><code class="language-go">bool
 
-<p>original
-- Robert Griesemer
-- Rob Pike (his spouse French Renee)
-- Ken Thompson</p>
+string
 
-<h2 id="tools">Tools</h2>
+int int8 int16 int32 int64
+uint uint8 uint16 uint32 uint64 uintptr
 
-<p>delve debugging server</p>
+byte //is an alias for uint8 
+rune //is an alias for int32
 
-<p>godoc</p>
+float32 float64
+complex64 complex128
 
-<h2 id="types">Types</h2>
-
-<blockquote>
-<p>static vs abstract</p>
-</blockquote>
-
-<p>static are basically all the common <em>builtin</em> types</p>
-
-<p><code>interface{}</code> is any type or <code>object</code> in other OOP-oriented language</p>
-
-<h2 id="struct">Struct</h2>
-
-<p>struct pointer has c-like syntax sugar for <code>(*p).X =&gt; p.X</code></p>
-
-<h2 id="array">Array</h2>
-
-<pre><code class="language-go">var a [10]int
 </code></pre>
 
-<p>array cannot be resized</p>
+<h3 id="type-casting">Type Casting</h3>
 
-<h2 id="slice">Slice</h2>
+<p>The expression T(v) converts the value v to the type T</p>
 
-<p>match the python way for lower and higher bound</p>
+<h3 id="type-inference">Type inference</h3>
 
-<p>slice literal <code>a := []int{1,2,3,4}</code>
+<pre><code class="language-go">v := 'a'
+//v is of type int32  97
+fmt.Printf(&quot;v is of type %T  %v\n&quot;, v, v) 
+v := &quot;a&quot;  //v is of type string  a
+</code></pre>
+
+<h3 id="error">error</h3>
+
+<pre><code class="language-go">type error interface {
+        Error() string
+}
+</code></pre>
+
+<h3 id="strings">Strings</h3>
+
+<p><code>&quot;&quot;</code> is string</p>
+
+<p><code>''</code> is a character or char, but it&rsquo;s not 8-bit ascii
+in <strong>go</strong>, the word <strong>rune</strong> is used</p>
+
+<pre><code class="language-go">func main() {
+	for pos, char := range &quot;Gő!汉字熱&quot; {
+		fmt.Printf(&quot;character '%c' starts at byte position %d\n&quot;, char, pos)
+	}
+	// character 'G' starts at byte position 0
+	// character 'ő' starts at byte position 1
+	// character '!' starts at byte position 3
+	// character '汉' starts at byte position 4
+	// character '字' starts at byte position 7
+	// character '熱' starts at byte position 10
+}
+</code></pre>
+
+<h2 id="dynamic-types">Dynamic Types</h2>
+
+<h3 id="pointers">Pointers</h3>
+
+<pre><code class="language-go">// has no pointer arthimetic
+var p *int
+i := 42
+p = &amp;i
+
+fmt.Println(*p)
+*p = 21
+</code></pre>
+
+<h3 id="struct">Struct</h3>
+
+<pre><code class="language-go">type Point struct{
+	x int
+	y int
+}
+// Struct fields can be accessed through a struct pointer.
+// struct pointer has c-like syntax sugar for `(*p).x =&gt; p.x`
+
+v := Point{1,2}  // struct literals
+p = &amp;v
+p.x = 100
+
+w := Point{x:1}  // implies y:0
+</code></pre>
+
+<h3 id="array">Array</h3>
+
+<pre><code class="language-go">var a [10]int
+primes := [6]int{2, 3, 5, 7, 11, 13}
+primes := [...]int{2,3,5,7}
+</code></pre>
+
+<p>array cannot be resized, array variable is not the pointer to the first element.
+each re-assignment is a copy of the whole content</p>
+
+<h3 id="slice">Slice</h3>
+
+<blockquote>
+<p>a slice is three-item descriptor (pointer to array, length, capacity)</p>
+</blockquote>
+
+<pre><code class="language-go">//type, len, cap
+make([]int, 10, 100) //[0 0 0 0 0 0 0 0 0 0]
+</code></pre>
+
+<p>slice literal <code>a := []int{1,2,3,4}</code>:
 1. create an array of fixed size 4
-2. create the slice references the array</p>
+2. create the slice references to the array</p>
 
-<p><em>length</em> and <em>capacity</em></p>
+<p>A slice does not store any data, it describes a section of an underlying array</p>
+
+<p>slice range <em>matches the python way for lower and higher bound</em></p>
+
+<p>slice <em>length</em> and <em>capacity</em></p>
 
 <p><a href="https://blog.golang.org/go-slices-usage-and-internals">usage and internals</a></p>
 
 <p><img src="https://blog.golang.org/go-slices-usage-and-internals_slice-2.png" alt="diagram" /></p>
+
+<h4 id="append-built-in">append (built-in)</h4>
+
+<blockquote>
+<p><code>func append(slice []T, elements ...T) []T</code></p>
+</blockquote>
+
+<pre><code class="language-go">x := []int{1,2,3}
+y := []int{4,5,6}
+x = append(x, y...)
+// the y... is like the unpack in python where you have a tuple x, and *x is to unpack the tuple into elements
+</code></pre>
+
+<h4 id="2-dimensions">2 dimensions</h4>
 
 <pre><code class="language-go">
 func Pic(dx, dy int) [][]uint8 {
@@ -164,33 +244,17 @@ func Pic(dx, dy int) [][]uint8 {
 }
 </code></pre>
 
-<h2 id="strings">strings</h2>
+<h3 id="make-vs-new">make vs new</h3>
 
-<p><code>&quot;&quot;</code> is string
-<code>''</code> is a character or char, but it&rsquo;s not 8-bit ascii</p>
+<ul>
+<li><p><code>new</code> allocates memory, zeros it and returns its address as *T (<em>abstract types</em>)</p></li>
 
-<p>in <strong>go</strong>, the word <strong>rune</strong> is used</p>
+<li><p><code>make</code> (built-in func): creates <em>Slices, Maps and Channel</em> only and returns <strong>Initialized</strong> (not zeroed) values as T (not *T)</p>
 
-<blockquote>
-<p>type rune = int32</p>
+<p>these three types represent <strong>references</strong> to data structure underneath. recall that the example of slice, it needs an array initialized to reference</p></li>
+</ul>
 
-<p>rune is an alias for int32 and is equivalent to int32 in all ways. It is
-    used, by convention, to distinguish character values from integer
-    values.</p>
-</blockquote>
-
-<pre><code class="language-go">for pos, char := range &quot;Gő!汉字熱&quot; {
-    fmt.Printf(&quot;character '%c' starts at byte position %d\n&quot;, char, pos)
-}
-//character 'G' [type =&gt; 0] starts at byte position int32
-//character 'ő' [type =&gt; 1] starts at byte position int32
-//character '!' [type =&gt; 3] starts at byte position int32
-//character '汉' [type =&gt; 4] starts at byte position int32
-//character '字' [type =&gt; 7] starts at byte position int32
-//character '熱' [type =&gt; 10] starts at byte position int32
-</code></pre>
-
-<h2 id="map">map</h2>
+<h3 id="map">map</h3>
 
 <pre><code class="language-go">
 //solution to WordCount
@@ -216,11 +280,75 @@ func main() {
 }
 </code></pre>
 
-<h2 id="defer">defer</h2>
+<h2 id="interface">Interface{}</h2>
 
-<p>similar to <code>with</code> context management in python</p>
+<p><code>interface{}</code> is any type or <code>object</code> in other OOP-oriented language</p>
 
-<h2 id="function">function</h2>
+<h1 id="control-structure">Control Structure</h1>
+
+<pre><code class="language-go">// loop
+for i:=1; i&lt;100; i++ {
+
+}
+for i &lt; 100 {
+
+}
+for {
+
+}
+
+// if 
+//Variables declared by the statement are only in scope until the end of the if.
+
+if err := scanner.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, &quot;reading input:&quot;, err)
+	}
+
+//switch
+//Go only runs the selected case, not all the cases that follow
+
+//Switch without a condition is the same as switch true
+switch os := runtime.GOOS; os {
+case &quot;darwin&quot;:
+	fmt.Println(&quot;OS X.&quot;)
+case &quot;linux&quot;:
+	fmt.Println(&quot;Linux.&quot;)
+default:
+	// freebsd, openbsd,
+	// plan9, windows...
+	fmt.Printf(&quot;%s.&quot;, os)
+}
+
+//goto
+
+
+
+//defer
+//Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in LIFO order
+func main() {
+	defer fmt.Println(&quot;world&quot;)
+	fmt.Println(&quot;hello&quot;)
+}
+
+
+
+</code></pre>
+
+<h2 id="functions">functions</h2>
+
+<pre><code class="language-go">// parameter shortened types
+func add(x, y int) int {
+	return x + y
+}
+
+//naked return
+func split(sum int) (x, y int){
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+</code></pre>
 
 <h2 id="methods">methods</h2>
 
@@ -242,7 +370,11 @@ func Abs(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
-
+//pointer receiver 
+func (v *Vertex) Scale(coef int) {
+	v.x = v.x * coef
+	v.y = v.y * coef
+}
 v := Vertex{3, 4}
 
 v.abs() // method
@@ -250,7 +382,15 @@ Abs(v) // function
 
 </code></pre>
 
-<h2 id="enum">enum</h2>
+<h2 id="constants">constants</h2>
+
+<ul>
+<li>created at compile time</li>
+<li>numbers, characters(runes), strings and boolean</li>
+<li>math.Sin(math.Pi/4) is not as Sin is func call</li>
+</ul>
+
+<h3 id="iota">iota</h3>
 
 <p>const iota = 0 // Untyped int.</p>
 
@@ -265,15 +405,9 @@ parenthesized) const declaration. It is zero-indexed.</p>
 
 <p>range can iterate over <em>slices, arrays, strings, maps and channels</em></p>
 
-<h2 id="make-vs-new">make vs new</h2>
-
-<ul>
-<li><p><code>new</code> allocates memory, zeros it and returns its address as *T (<em>abstract types</em>)</p></li>
-
-<li><p>make: creates <em>Slices, Maps and Channel</em> only and returns <strong>Initialized</strong> values as T</p>
-
-<p>builtin types</p></li>
-</ul>
+<pre><code class="language-go">for idx := range nums //drop ,value
+for _, val := range nums
+</code></pre>
 
 <h2 id="composite-literal">composite literal</h2>
 
@@ -288,6 +422,34 @@ return &amp;File{fd: fd, name: name}
 <li>%+v =&gt; all fields for struct</li>
 <li>%#v =&gt; go syntax <code>main.stack{pos:2, data:[10]int{20, 40, 0, 0, 0, 0, 0, 0, 0, 0}}</code></li>
 </ul>
+
+<p>##</p>
+
+<pre><code class="language-go">
+// word count
+package main
+
+import (
+	&quot;golang.org/x/tour/wc&quot;
+	&quot;strings&quot;
+)
+
+//WordCount returns stats of string words
+func WordCount(s string) map[string]int {
+	words := strings.Fields(s)
+	stats := make(map[string]int)
+	for _, word := range words {
+		stats[word]++
+	}
+	return stats
+}
+
+func main() {
+	wc.Test(WordCount)
+}
+
+
+</code></pre>
 
     </div>
     
@@ -332,6 +494,9 @@ return &amp;File{fd: fd, name: name}
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
