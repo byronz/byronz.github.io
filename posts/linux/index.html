@@ -97,6 +97,7 @@ alias gcm=&quot;git commit -m&quot;
 alias gk=&quot;git checkout&quot;
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias tri=&quot;tree -I '*.pyc|__pycache__|__init__.py'&quot;
 
 &lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&gt;
 export ANSIBLE_SSH_CONTROL_PATH='/tmp/asb-%%h-%%p-%%r'
@@ -248,7 +249,7 @@ tcp4       0      0  127.0.0.1.4380         *.*                    LISTEN
 
 <section class="section">
   <div class="container has-text-centered">
-    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+    <p>&copy; 2018 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
   </div>
 </section>
 
@@ -283,9 +284,13 @@ tcp4       0      0  127.0.0.1.4380         *.*                    LISTEN
 
 
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-108552865-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108552865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 <script async src='//www.google-analytics.com/analytics.js'></script>
 

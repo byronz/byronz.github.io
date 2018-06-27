@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="language, programming, automation" name="keywords">
+<meta content="Byron ZHU" name="author">
+<meta property="og:title" content="Init_mac - 雜">
+<meta property="og:url" content="https://byronz.github.io/posts/init_mac/">
+<meta property="og:description" content="tech blog">
+<meta property="og:type" content="website" />
+<title>Init_mac | 雜</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://byronz.github.io/css/style.css">
+<link rel="shortcut icon" href="https://byronz.github.io/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/solarized-dark.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://byronz.github.io"><h1 class="title is-4">雜</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/byronz" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/byronzhu" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Init_mac</h1>
+    <h2 class="subtitle is-5">May 26, 2018 by Byron ZHU</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/mac">mac</a>
+    
+        <a class="button is-link" href="/tags/install">install</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p><strong>REMIDNER</strong>
+    copy your previous terminal history</p>
+
+<h2 id="set-up-byronz-github-com">Set up byronz.github.com</h2>
+
+<ol>
+<li><code>ssh-keygen -t rsa -b 4096 -C &quot;byron.zhu.xq@gmail.com&quot;</code></li>
+<li><code>cat ~/.ssh/id_rsa.pub | pbcopy</code></li>
+<li>add ssh key in github</li>
+<li><code>git clone git@github.com:byronz/blog.git</code></li>
+<li>if you have public, need to readd as submodule <code>git rm -f public</code></li>
+<li><code>git submodule add -b master git@github.com:byronz/byronz.github.io.git public</code></li>
+<li>cd themes</li>
+<li><code>git submodule add -b master git@github.com:mgjohansen/hucore.git hucore</code></li>
+<li>install hugo <code>brew install hugo</code></li>
+</ol>
+
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
+
+<h2 id="python">Python</h2>
+
+<ul>
+<li>brew install python3</li>
+<li>cd /tmp &amp;&amp; curl <a href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a> -o get-pip.py</li>
+<li>python3 get-pip.py</li>
+</ul>
+
+<h2 id="setup-docker">Setup Docker</h2>
+
+<ul>
+<li><a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">https://store.docker.com/editions/community/docker-ce-desktop-mac</a></li>
+</ul>
+
+<h2 id="setup-vs-code">Setup VS Code</h2>
+
+<h3 id="python-1">Python</h3>
+
+<h3 id="golang">Golang</h3>
+
+<h2 id="setup-iterm2">Setup iterm2</h2>
+
+<ol>
+<li>install <strong>zsh</strong> <code>brew install zsh</code> and <strong>oh my zsh</strong> <code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+</code></li>
+<li><a href="https://github.com/powerline/fonts">install powerline fonts</a> and set the font as iterm text font</li>
+<li>.zshrc</li>
+</ol>
+
+<pre><code># If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/byronz/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME=&quot;agnoster&quot;
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( &quot;robbyrussell&quot; &quot;agnoster&quot; )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE=&quot;true&quot;
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE=&quot;true&quot;
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE=&quot;true&quot;
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS=&quot;true&quot;
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE=&quot;true&quot;
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION=&quot;true&quot;
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS=&quot;true&quot;
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY=&quot;true&quot;
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: &quot;mm/dd/yyyy&quot;|&quot;dd.mm.yyyy&quot;|&quot;yyyy-mm-dd&quot;
+# HIST_STAMPS=&quot;mm/dd/yyyy&quot;
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH=&quot;/usr/local/man:$MANPATH&quot;
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS=&quot;-arch x86_64&quot;
+
+# ssh
+# export SSH_KEY_PATH=&quot;~/.ssh/rsa_id&quot;
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig=&quot;mate ~/.zshrc&quot;
+# alias ohmyzsh=&quot;mate ~/.oh-my-zsh&quot;
+alias gr='grep -Rnif /dev/stdin . &lt;&lt;&lt;'
+alias tri='tree -I &quot;*.pyc|__pycache__&quot;'
+alias youtube-dl='/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl'
+alias y2mp3='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0'
+
+# alias for git
+alias gs=&quot;git status&quot;
+alias gsv=&quot;git status -v&quot;
+alias gaa=&quot;git add -A&quot;
+alias gcm=&quot;git commit -m&quot;
+alias gk=&quot;git checkout&quot;
+alias gd='git diff'
+alias gdc='git diff --cached'
+</code></pre>
+
+<p>set ./oh-my-zsh.sh</p>
+
+<pre><code>
+# Check for updates on initial load...
+if [ &quot;$DISABLE_AUTO_UPDATE&quot; != &quot;true&quot; ]; then
+  env ZSH=$ZSH DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $ZSH/tools/check_for_upgrade.sh
+fi
+
+# Initializes Oh My Zsh
+
+# add a function path
+fpath=($ZSH/functions $ZSH/completions $fpath)
+
+# Load all stock functions (from $fpath files) called below.
+autoload -U compaudit compinit
+
+# Set ZSH_CUSTOM to the path where your custom config files
+# and plugins exists, or else we will use the default custom/
+if [[ -z &quot;$ZSH_CUSTOM&quot; ]]; then
+    ZSH_CUSTOM=&quot;$ZSH/custom&quot;
+fi
+
+# Set ZSH_CACHE_DIR to the path where cache files should be created
+# or else we will use the default cache/
+if [[ -z &quot;$ZSH_CACHE_DIR&quot; ]]; then
+  ZSH_CACHE_DIR=&quot;$ZSH/cache&quot;
+fi
+
+
+# Load all of the config files in ~/oh-my-zsh that end in .zsh
+# TIP: Add files you don't want in git to .gitignore
+for config_file ($ZSH/lib/*.zsh); do
+  custom_config_file=&quot;${ZSH_CUSTOM}/lib/${config_file:t}&quot;
+  [ -f &quot;${custom_config_file}&quot; ] &amp;&amp; config_file=${custom_config_file}
+  source $config_file
+done
+
+
+is_plugin() {
+  local base_dir=$1
+  local name=$2
+  test -f $base_dir/plugins/$name/$name.plugin.zsh \
+    || test -f $base_dir/plugins/$name/_$name
+}
+# Add all defined plugins to fpath. This must be done
+# before running compinit.
+for plugin ($plugins); do
+  if is_plugin $ZSH_CUSTOM $plugin; then
+    fpath=($ZSH_CUSTOM/plugins/$plugin $fpath)
+  elif is_plugin $ZSH $plugin; then
+    fpath=($ZSH/plugins/$plugin $fpath)
+  fi
+done
+
+# Figure out the SHORT hostname
+if [[ &quot;$OSTYPE&quot; = darwin* ]]; then
+  # macOS's $HOST changes with dhcp, etc. Use ComputerName if possible.
+  SHORT_HOST=$(scutil --get ComputerName 2&gt;/dev/null) || SHORT_HOST=${HOST/.*/}
+else
+  SHORT_HOST=${HOST/.*/}
+fi
+
+# Save the location of the current completion dump file.
+if [ -z &quot;$ZSH_COMPDUMP&quot; ]; then
+  ZSH_COMPDUMP=&quot;${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}&quot;
+fi
+
+if [[ $ZSH_DISABLE_COMPFIX != true ]]; then
+  # If completion insecurities exist, warn the user without enabling completions.
+  if ! compaudit &amp;&gt;/dev/null; then
+    # This function resides in the &quot;lib/compfix.zsh&quot; script sourced above.
+    handle_completion_insecurities
+  # Else, enable and cache completions to the desired file.
+  else
+    compinit -d &quot;${ZSH_COMPDUMP}&quot;
+  fi
+else
+  compinit -u -d &quot;${ZSH_COMPDUMP}&quot;
+fi
+
+# Load all of the plugins that were defined in ~/.zshrc
+for plugin ($plugins); do
+  if [ -f $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh ]; then
+    source $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh
+  elif [ -f $ZSH/plugins/$plugin/$plugin.plugin.zsh ]; then
+    source $ZSH/plugins/$plugin/$plugin.plugin.zsh
+  fi
+done
+
+# Load all of your custom configurations from custom/
+for config_file ($ZSH_CUSTOM/*.zsh(N)); do
+  source $config_file
+done
+unset config_file
+
+# Load the theme
+if [[ &quot;$ZSH_THEME&quot; == &quot;random&quot; ]]; then
+  if [[ &quot;${(t)ZSH_THEME_RANDOM_CANDIDATES}&quot; = &quot;array&quot; ]] &amp;&amp; [[ &quot;${#ZSH_THEME_RANDOM_CANDIDATES[@]}&quot; -gt 0 ]]; then
+    themes=($ZSH/themes/${^ZSH_THEME_RANDOM_CANDIDATES}.zsh-theme)
+  else
+    themes=($ZSH/themes/*zsh-theme)
+  fi
+  N=${#themes[@]}
+  ((N=(RANDOM%N)+1))
+  RANDOM_THEME=${themes[$N]}
+  source &quot;$RANDOM_THEME&quot;
+  echo &quot;[oh-my-zsh] Random theme '$RANDOM_THEME' loaded...&quot;
+else
+  if [ ! &quot;$ZSH_THEME&quot; = &quot;&quot;  ]; then
+    if [ -f &quot;$ZSH_CUSTOM/$ZSH_THEME.zsh-theme&quot; ]; then
+      source &quot;$ZSH_CUSTOM/$ZSH_THEME.zsh-theme&quot;
+    elif [ -f &quot;$ZSH_CUSTOM/themes/$ZSH_THEME.zsh-theme&quot; ]; then
+      source &quot;$ZSH_CUSTOM/themes/$ZSH_THEME.zsh-theme&quot;
+    else
+      source &quot;$ZSH/themes/$ZSH_THEME.zsh-theme&quot;
+    fi
+  fi
+fi
+
+# agnoster prompt modified
+ZSH_THEME_GIT_PROMPT_DIRTY='±'
+
+function _git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || ref=&quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&gt; /dev/null)&quot;
+  echo &quot;${ref/refs\/heads\// }$(parse_git_dirty)&quot;
+}
+
+function _git_info() {
+  if $(git rev-parse --is-inside-work-tree &gt;/dev/null 2&gt;&amp;1); then
+    local BG_COLOR=green
+    if [[ -n $(parse_git_dirty) ]]; then
+      BG_COLOR=yellow
+      FG_COLOR=black
+    fi
+
+    if [[ ! -z $(git ls-files --other --exclude-standard 2&gt; /dev/null) ]]; then
+        BG_COLOR=red
+        FG_COLOR=white
+    fi
+    echo &quot;%{%K{$BG_COLOR}%}%{%F{$FG_COLOR}%} $(_git_prompt_info) %{%F{$BG_COLOR}%K{blue}%}&quot;
+  else
+    echo &quot;%{%K{blue}%}&quot;
+  fi
+}
+
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] &amp;&amp; echo '('`basename $VIRTUAL_ENV`') '
+}
+
+PROMPT_HOST='%{%b%F{gray}%K{black}%} %(?.%{%F{green}%}✔.%{%F{red}%}✘)%{%F{yellow}%} %n %{%F{black}%}'
+PROMPT_DIR='%{%F{white}%} %~%  '
+PROMPT_SU='%(!.%{%k%F{blue}%K{black}%}%{%F{yellow}%} ⚡ %{%k%F{black}%}.%{%k%F{blue}%})%{%f%k%b%}'
+
+PROMPT='%{%f%b%k%}$PROMPT_HOST$(_git_info)$PROMPT_DIR$PROMPT_SU
+$(virtualenv_info)❯ '
+RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
+
+</code></pre>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbyronz.github.io%2fposts%2finit_mac%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbyronz.github.io%2fposts%2finit_mac%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbyronz.github.io%2fposts%2finit_mac%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Init_mac - https%3a%2f%2fbyronz.github.io%2fposts%2finit_mac%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fbyronz.github.io%2fposts%2finit_mac%2f&title=Init_mac" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'http-byronz-github-com';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2018 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/json.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/java.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/elixir.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/scala.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108552865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>

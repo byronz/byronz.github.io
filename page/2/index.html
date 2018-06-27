@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.32.4" />
+	<meta name="generator" content="Hugo 0.41" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="language, programming, automation" name="keywords">
@@ -63,6 +63,62 @@
 
 <section class="section">
   <div class="container">
+    
+    <article>
+      <h1 class="title"><a href="https://byronz.github.io/posts/linux/">Mac Command Line Tools</a></h1>
+      <h2 class="subtitle is-5">January 3, 2018</h2>
+      
+        <div class="tags">
+    
+        <a class="button is-link" href="/tags/linux">linux</a>
+    
+        <a class="button is-link" href="/tags/tool">tool</a>
+    
+        <a class="button is-link" href="/tags/utilities">utilities</a>
+    
+</div>
+
+      
+      <div class="content">
+        oh my zsh alias gr='grep -Rnif /dev/stdin . &lt;&lt;&lt;' alias tri='tree -I &quot;*.pyc|__pycache__&quot;' alias youtube-dl='/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl' alias y2mp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0' # alias for git alias gs=&quot;git status&quot; alias gsv=&quot;git status -v&quot; alias gaa=&quot;git add -A&quot; alias gcm=&quot;git commit -m&quot; alias gk=&quot;git checkout&quot; alias gd='git diff' alias gdc='git diff --cached' alias tri=&quot;tree -I '*.pyc|__pycache__|__init__.py'&quot; &lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&gt; export ANSIBLE_SSH_CONTROL_PATH='/tmp/asb-%%h-%%p-%%r'  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY='±' function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || ref=&quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&gt; /dev/null)&quot; echo &quot;${ref/refs\/heads\// }$(parse_git_dirty)&quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &gt;/dev/null 2&gt;&amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !
+        
+        ...<a class="button is-link" href="https://byronz.github.io/posts/linux/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h1 class="title"><a href="https://byronz.github.io/posts/go/">Go</a></h1>
+      <h2 class="subtitle is-5">December 14, 2017</h2>
+      
+        <div class="tags">
+    
+        <a class="button is-link" href="/tags/go">go</a>
+    
+        <a class="button is-link" href="/tags/programming">programming</a>
+    
+        <a class="button is-link" href="/tags/concurrency">concurrency</a>
+    
+</div>
+
+      
+      <div class="content">
+        Doumentation Go has well balanced the documentation and code by integrating a powerful eco-system within the tool sets. godoc -http=:8888 offline documentation site godoc fmt Fprintf or godoc builtin append quick terminal check comments prefix as document stub, but no specific requirements for parameters and return value, as go document tool will dynamically parse it from the source code Basics Static Types (Built In) builtin pkg bool string int int8
+        
+        ...<a class="button is-link" href="https://byronz.github.io/posts/go/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
     
     <article>
       <h1 class="title"><a href="https://byronz.github.io/posts/elixir/">Elixir Part I - Playbook</a></h1>
@@ -274,68 +330,6 @@ Gradient Descent Practices
       </div>
     </article>
     
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/jwt/">JWT</a></h1>
-      <h2 class="subtitle is-5">October 2, 2017</h2>
-      
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/jwt">jwt</a>
-    
-        <a class="button is-link" href="/tags/rfc7519">rfc7519</a>
-    
-        <a class="button is-link" href="/tags/security">security</a>
-    
-        <a class="button is-link" href="/tags/python">python</a>
-    
-        <a class="button is-link" href="/tags/web">web</a>
-    
-</div>
-
-      
-      <div class="content">
-        Structure  JJJJ.PPPPPPP.SSSSSSSS
-  JOSE Payload Signature  RFCs  JWS JWT  Usage Validation Algorithm  7.2. Validating a JWT
-When validating a JWT, the following steps are performed. The order of the steps is not significant in cases where there are no dependencies between the inputs and outputs of the steps. If any of the listed steps fail, then the JWT MUST be rejected &ndash; that is, treated by the application as an invalid input.
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/jwt/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <h1 class="title"><a href="https://byronz.github.io/posts/narcos/">Narcos</a></h1>
-      <h2 class="subtitle is-5">September 28, 2017</h2>
-      
-        <div class="tags">
-    
-        <a class="button is-link" href="/tags/narcos">narcos</a>
-    
-        <a class="button is-link" href="/tags/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE">朝花夕拾</a>
-    
-        <a class="button is-link" href="/tags/%E8%AA%9E%E8%A8%80">語言</a>
-    
-</div>
-
-      
-      <div class="content">
-        I just watched 3 seasons of netflix&rsquo;s series Narcos, really enjoyed the south american landscape scene and latino guitar. The script is about 70% Español and 30% English. kingpin - キングピン S3E1 The Kingpin Strategy a person or thing that is essential to the success of an organization or operation. smuggler synonyms: - trafficker - mule paranoid characterized by suspiciousness,
-        
-        ...<a class="button is-link" href="https://byronz.github.io/posts/narcos/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
   </div>
 </section>
 <section class="section">
@@ -371,7 +365,7 @@ When validating a JWT, the following steps are performed. The order of the steps
 
 <section class="section">
   <div class="container has-text-centered">
-    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+    <p>&copy; 2018 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
   </div>
 </section>
 
@@ -406,9 +400,13 @@ When validating a JWT, the following steps are performed. The order of the steps
 
 
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-108552865-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108552865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 <script async src='//www.google-analytics.com/analytics.js'></script>
 

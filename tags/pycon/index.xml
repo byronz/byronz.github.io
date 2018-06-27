@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pycon on 雜</title>
+    <link>https://byronz.github.io/tags/pycon/</link>
+    <description>Recent content in Pycon on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 04 Jun 2018 23:10:13 -0400</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/pycon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PYCON 2018 Code Quality</title>
+      <link>https://byronz.github.io/posts/pycon_quality/</link>
+      <pubDate>Mon, 04 Jun 2018 23:10:13 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/pycon_quality/</guid>
+      <description>PYCQA pylint vs flake8 https://code.visualstudio.com/docs/python/linting</description>
+    </item>
+    
+  </channel>
+</rss>

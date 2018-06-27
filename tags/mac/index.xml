@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on 雜</title>
+    <link>https://byronz.github.io/tags/mac/</link>
+    <description>Recent content in Mac on 雜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 26 May 2018 00:55:53 -0400</lastBuildDate>
+    
+	<atom:link href="https://byronz.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Init_mac</title>
+      <link>https://byronz.github.io/posts/init_mac/</link>
+      <pubDate>Sat, 26 May 2018 00:55:53 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/init_mac/</guid>
+      <description>REMIDNER copy your previous terminal history
+Set up byronz.github.com  ssh-keygen -t rsa -b 4096 -C &amp;quot;byron.zhu.xq@gmail.com&amp;quot; cat ~/.ssh/id_rsa.pub | pbcopy add ssh key in github git clone git@github.com:byronz/blog.git if you have public, need to readd as submodule git rm -f public git submodule add -b master git@github.com:byronz/byronz.github.io.git public cd themes git submodule add -b master git@github.com:mgjohansen/hucore.git hucore install hugo brew install hugo  https://gohugo.io/hosting-and-deployment/hosting-on-github/
+Python  brew install python3 cd /tmp &amp;amp;&amp;amp; curl https://bootstrap.</description>
+    </item>
+    
+  </channel>
+</rss>

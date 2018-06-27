@@ -6,11 +6,31 @@
     <description>Recent content on 雜</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 20 Apr 2018 17:39:15 -0400</lastBuildDate>
+    <copyright>&amp;copy; 2018 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 04 Jun 2018 23:10:13 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PYCON 2018 Code Quality</title>
+      <link>https://byronz.github.io/posts/pycon_quality/</link>
+      <pubDate>Mon, 04 Jun 2018 23:10:13 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/pycon_quality/</guid>
+      <description>PYCQA pylint vs flake8 https://code.visualstudio.com/docs/python/linting</description>
+    </item>
+    
+    <item>
+      <title>Init_mac</title>
+      <link>https://byronz.github.io/posts/init_mac/</link>
+      <pubDate>Sat, 26 May 2018 00:55:53 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/posts/init_mac/</guid>
+      <description>REMIDNER copy your previous terminal history
+Set up byronz.github.com  ssh-keygen -t rsa -b 4096 -C &amp;quot;byron.zhu.xq@gmail.com&amp;quot; cat ~/.ssh/id_rsa.pub | pbcopy add ssh key in github git clone git@github.com:byronz/blog.git if you have public, need to readd as submodule git rm -f public git submodule add -b master git@github.com:byronz/byronz.github.io.git public cd themes git submodule add -b master git@github.com:mgjohansen/hucore.git hucore install hugo brew install hugo  https://gohugo.io/hosting-and-deployment/hosting-on-github/
+Python  brew install python3 cd /tmp &amp;amp;&amp;amp; curl https://bootstrap.</description>
+    </item>
     
     <item>
       <title>Tech Tips</title>
@@ -60,7 +80,7 @@ CREATE KEYSPACE sports WITH REPLICATION = {&#39;class&#39; : &#39;NetworkTopolog
       <pubDate>Mon, 19 Feb 2018 15:33:25 -0500</pubDate>
       
       <guid>https://byronz.github.io/posts/bai/</guid>
-      <description>遊園驚夢 白先勇 錢夫人到達臺北近郊天母竇公館的時候，竇公館門前兩旁的汽車已經排滿 了，大多是官家的黑色小轎車，錢夫人坐的計程車開到門口她便命令司</description>
+      <description>遊園驚夢 白先勇 錢夫人到達臺北近郊天母竇公館的時候，竇公館門前兩旁的汽車已經排滿了，大多是官家的黑色小轎車，錢夫人坐的計程車開到門口她便命令司</description>
     </item>
     
     <item>
@@ -100,7 +120,7 @@ CREATE TABLE crossfit_gyms_by_city ( country_code text, state_province text, cit
       <pubDate>Wed, 03 Jan 2018 11:48:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/posts/linux/</guid>
-      <description>oh my zsh alias gr=&#39;grep -Rnif /dev/stdin . &amp;lt;&amp;lt;&amp;lt;&#39; alias tri=&#39;tree -I &amp;quot;*.pyc|__pycache__&amp;quot;&#39; alias youtube-dl=&#39;/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl&#39; alias y2mp3=&#39;youtube-dl --extract-audio --audio-format mp3 --audio-quality 0&#39; # alias for git alias gs=&amp;quot;git status&amp;quot; alias gsv=&amp;quot;git status -v&amp;quot; alias gaa=&amp;quot;git add -A&amp;quot; alias gcm=&amp;quot;git commit -m&amp;quot; alias gk=&amp;quot;git checkout&amp;quot; alias gd=&#39;git diff&#39; alias gdc=&#39;git diff --cached&#39; &amp;lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&amp;gt; export ANSIBLE_SSH_CONTROL_PATH=&#39;/tmp/asb-%%h-%%p-%%r&#39;  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY=&#39;±&#39; function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&amp;gt; /dev/null) || ref=&amp;quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&amp;gt; /dev/null)&amp;quot; echo &amp;quot;${ref/refs\/heads\// }$(parse_git_dirty)&amp;quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &amp;gt;/dev/null 2&amp;gt;&amp;amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !</description>
+      <description>oh my zsh alias gr=&#39;grep -Rnif /dev/stdin . &amp;lt;&amp;lt;&amp;lt;&#39; alias tri=&#39;tree -I &amp;quot;*.pyc|__pycache__&amp;quot;&#39; alias youtube-dl=&#39;/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl&#39; alias y2mp3=&#39;youtube-dl --extract-audio --audio-format mp3 --audio-quality 0&#39; # alias for git alias gs=&amp;quot;git status&amp;quot; alias gsv=&amp;quot;git status -v&amp;quot; alias gaa=&amp;quot;git add -A&amp;quot; alias gcm=&amp;quot;git commit -m&amp;quot; alias gk=&amp;quot;git checkout&amp;quot; alias gd=&#39;git diff&#39; alias gdc=&#39;git diff --cached&#39; alias tri=&amp;quot;tree -I &#39;*.pyc|__pycache__|__init__.py&#39;&amp;quot; &amp;lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&amp;gt; export ANSIBLE_SSH_CONTROL_PATH=&#39;/tmp/asb-%%h-%%p-%%r&#39;  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY=&#39;±&#39; function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&amp;gt; /dev/null) || ref=&amp;quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&amp;gt; /dev/null)&amp;quot; echo &amp;quot;${ref/refs\/heads\// }$(parse_git_dirty)&amp;quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &amp;gt;/dev/null 2&amp;gt;&amp;amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !</description>
     </item>
     
     <item>

@@ -79,7 +79,7 @@
 
       
       <div class="content">
-        oh my zsh alias gr='grep -Rnif /dev/stdin . &lt;&lt;&lt;' alias tri='tree -I &quot;*.pyc|__pycache__&quot;' alias youtube-dl='/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl' alias y2mp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0' # alias for git alias gs=&quot;git status&quot; alias gsv=&quot;git status -v&quot; alias gaa=&quot;git add -A&quot; alias gcm=&quot;git commit -m&quot; alias gk=&quot;git checkout&quot; alias gd='git diff' alias gdc='git diff --cached' &lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&gt; export ANSIBLE_SSH_CONTROL_PATH='/tmp/asb-%%h-%%p-%%r'  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY='±' function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || ref=&quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&gt; /dev/null)&quot; echo &quot;${ref/refs\/heads\// }$(parse_git_dirty)&quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &gt;/dev/null 2&gt;&amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !
+        oh my zsh alias gr='grep -Rnif /dev/stdin . &lt;&lt;&lt;' alias tri='tree -I &quot;*.pyc|__pycache__&quot;' alias youtube-dl='/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl' alias y2mp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0' # alias for git alias gs=&quot;git status&quot; alias gsv=&quot;git status -v&quot; alias gaa=&quot;git add -A&quot; alias gcm=&quot;git commit -m&quot; alias gk=&quot;git checkout&quot; alias gd='git diff' alias gdc='git diff --cached' alias tri=&quot;tree -I '*.pyc|__pycache__|__init__.py'&quot; &lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&gt; export ANSIBLE_SSH_CONTROL_PATH='/tmp/asb-%%h-%%p-%%r'  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY='±' function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || ref=&quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&gt; /dev/null)&quot; echo &quot;${ref/refs\/heads\// }$(parse_git_dirty)&quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &gt;/dev/null 2&gt;&amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !
         
         ...<a class="button is-link" href="https://byronz.github.io/posts/linux/" style="height:28px">
           Read more
@@ -112,7 +112,7 @@
 
 <section class="section">
   <div class="container has-text-centered">
-    <p>&copy; 2017 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
+    <p>&copy; 2018 | 朱曉清 | <small>powered by</small> <a href="gohugo.io" target="_blank">Hugo</a></p>
   </div>
 </section>
 
@@ -147,9 +147,13 @@
 
 
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-108552865-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108552865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 <script async src='//www.google-analytics.com/analytics.js'></script>
 

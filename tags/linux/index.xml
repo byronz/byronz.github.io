@@ -6,7 +6,7 @@
     <description>Recent content in Linux on 雜</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <copyright>&amp;copy; 2018 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 03 Jan 2018 11:48:54 -0500</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,7 @@
       <pubDate>Wed, 03 Jan 2018 11:48:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/posts/linux/</guid>
-      <description>oh my zsh alias gr=&#39;grep -Rnif /dev/stdin . &amp;lt;&amp;lt;&amp;lt;&#39; alias tri=&#39;tree -I &amp;quot;*.pyc|__pycache__&amp;quot;&#39; alias youtube-dl=&#39;/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl&#39; alias y2mp3=&#39;youtube-dl --extract-audio --audio-format mp3 --audio-quality 0&#39; # alias for git alias gs=&amp;quot;git status&amp;quot; alias gsv=&amp;quot;git status -v&amp;quot; alias gaa=&amp;quot;git add -A&amp;quot; alias gcm=&amp;quot;git commit -m&amp;quot; alias gk=&amp;quot;git checkout&amp;quot; alias gd=&#39;git diff&#39; alias gdc=&#39;git diff --cached&#39; &amp;lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&amp;gt; export ANSIBLE_SSH_CONTROL_PATH=&#39;/tmp/asb-%%h-%%p-%%r&#39;  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY=&#39;±&#39; function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&amp;gt; /dev/null) || ref=&amp;quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&amp;gt; /dev/null)&amp;quot; echo &amp;quot;${ref/refs\/heads\// }$(parse_git_dirty)&amp;quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &amp;gt;/dev/null 2&amp;gt;&amp;amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !</description>
+      <description>oh my zsh alias gr=&#39;grep -Rnif /dev/stdin . &amp;lt;&amp;lt;&amp;lt;&#39; alias tri=&#39;tree -I &amp;quot;*.pyc|__pycache__&amp;quot;&#39; alias youtube-dl=&#39;/usr/local/Cellar/youtube-dl/2018.01.14/bin/youtube-dl&#39; alias y2mp3=&#39;youtube-dl --extract-audio --audio-format mp3 --audio-quality 0&#39; # alias for git alias gs=&amp;quot;git status&amp;quot; alias gsv=&amp;quot;git status -v&amp;quot; alias gaa=&amp;quot;git add -A&amp;quot; alias gcm=&amp;quot;git commit -m&amp;quot; alias gk=&amp;quot;git checkout&amp;quot; alias gd=&#39;git diff&#39; alias gdc=&#39;git diff --cached&#39; alias tri=&amp;quot;tree -I &#39;*.pyc|__pycache__|__init__.py&#39;&amp;quot; &amp;lt;!-- export JAVA_HOME=$(/usr/libexec/java_home) --&amp;gt; export ANSIBLE_SSH_CONTROL_PATH=&#39;/tmp/asb-%%h-%%p-%%r&#39;  # agnoster prompt modified ZSH_THEME_GIT_PROMPT_DIRTY=&#39;±&#39; function _git_prompt_info() { ref=$(git symbolic-ref HEAD 2&amp;gt; /dev/null) || ref=&amp;quot;➦ $(git show-ref --head -s --abbrev |head -n1 2&amp;gt; /dev/null)&amp;quot; echo &amp;quot;${ref/refs\/heads\// }$(parse_git_dirty)&amp;quot; } function _git_info() { if $(git rev-parse --is-inside-work-tree &amp;gt;/dev/null 2&amp;gt;&amp;amp;1); then local BG_COLOR=green if [[ -n $(parse_git_dirty) ]]; then BG_COLOR=yellow FG_COLOR=black fi if [[ !</description>
     </item>
     
   </channel>

@@ -6,11 +6,20 @@
     <description>Recent content in Tags on 雜</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 24 Oct 2017 22:36:04 -0400</lastBuildDate>
+    <copyright>&amp;copy; 2018 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 04 Jun 2018 23:10:13 -0400</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018</title>
+      <link>https://byronz.github.io/tags/2018/</link>
+      <pubDate>Mon, 04 Jun 2018 23:10:13 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/2018/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ai</title>
@@ -54,6 +63,15 @@
       <pubDate>Sat, 14 Oct 2017 10:36:09 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cleveland</title>
+      <link>https://byronz.github.io/tags/cleveland/</link>
+      <pubDate>Mon, 04 Jun 2018 23:10:13 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/cleveland/</guid>
       <description></description>
     </item>
     
@@ -175,6 +193,15 @@
     </item>
     
     <item>
+      <title>Install</title>
+      <link>https://byronz.github.io/tags/install/</link>
+      <pubDate>Sat, 26 May 2018 00:55:53 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jwt</title>
       <link>https://byronz.github.io/tags/jwt/</link>
       <pubDate>Mon, 02 Oct 2017 10:53:53 -0400</pubDate>
@@ -198,6 +225,15 @@
       <pubDate>Wed, 03 Jan 2018 11:48:54 -0500</pubDate>
       
       <guid>https://byronz.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://byronz.github.io/tags/mac/</link>
+      <pubDate>Sat, 26 May 2018 00:55:53 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/mac/</guid>
       <description></description>
     </item>
     
@@ -247,11 +283,29 @@
     </item>
     
     <item>
+      <title>Pycon</title>
+      <link>https://byronz.github.io/tags/pycon/</link>
+      <pubDate>Mon, 04 Jun 2018 23:10:13 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/pycon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>https://byronz.github.io/tags/python/</link>
       <pubDate>Mon, 02 Oct 2017 10:53:53 -0400</pubDate>
       
       <guid>https://byronz.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quality</title>
+      <link>https://byronz.github.io/tags/quality/</link>
+      <pubDate>Mon, 04 Jun 2018 23:10:13 -0400</pubDate>
+      
+      <guid>https://byronz.github.io/tags/quality/</guid>
       <description></description>
     </item>
     
