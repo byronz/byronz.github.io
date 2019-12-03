@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 | 朱曉清 | &lt;small&gt;powered by&lt;/small&gt; &lt;a href=&#34;gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 04 Jun 2018 23:10:13 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 22:12:43 -0500</lastBuildDate>
     
 	<atom:link href="https://byronz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker Dev</title>
+      <link>https://byronz.github.io/posts/docker_dev/</link>
+      <pubDate>Mon, 02 Dec 2019 22:12:43 -0500</pubDate>
+      
+      <guid>https://byronz.github.io/posts/docker_dev/</guid>
+      <description> commons installs RUN export DEBIAN_FRONTEND=noninteractive &amp;amp;&amp;amp; \ apt update &amp;amp;&amp;amp; apt install -y --no-install-recommends \ sudo curl iputils-ping gcc make build-essential git vim openssh-client ca-certificates wget curl sudo gnupg vim iputils-ping &amp;amp;&amp;amp; \ apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false RUN mkdir -p /root/.ssh &amp;amp;&amp;amp; \ ssh-keygen -A &amp;amp;&amp;amp; \ chmod 0700 /root/.ssh &amp;amp;&amp;amp; \ ssh-keyscan github.com &amp;gt; /root/.ssh/known_hosts chmod 600 /root/.ssh/id_rsa RUN echo &#39;%sudo ALL=(ALL) NOPASSWD:ALL&#39; &amp;gt;&amp;gt; /etc/sudoers RUN groupadd --gid 999 docker &amp;amp;&amp;amp; \ useradd -u 1000 -g users -G sudo,docker dev  </description>
+    </item>
     
     <item>
       <title>PYCON 2018 Code Quality</title>
